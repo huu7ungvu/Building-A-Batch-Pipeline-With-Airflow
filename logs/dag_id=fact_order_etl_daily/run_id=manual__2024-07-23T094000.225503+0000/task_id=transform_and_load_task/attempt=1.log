@@ -1,0 +1,94 @@
+[2024-07-23T09:40:20.853+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order_etl_daily.transform_and_load_task manual__2024-07-23T09:40:00.225503+00:00 [queued]>
+[2024-07-23T09:40:20.872+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order_etl_daily.transform_and_load_task manual__2024-07-23T09:40:00.225503+00:00 [queued]>
+[2024-07-23T09:40:20.872+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-23T09:40:20.894+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-23 09:40:00.225503+00:00
+[2024-07-23T09:40:20.903+0000] {standard_task_runner.py:60} INFO - Started process 9269 to run task
+[2024-07-23T09:40:20.907+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order_etl_daily', 'transform_and_load_task', 'manual__2024-07-23T09:40:00.225503+00:00', '--job-id', '311', '--raw', '--subdir', 'DAGS_FOLDER/fact_order.py', '--cfg-path', '/tmp/tmp3k33fzj4']
+[2024-07-23T09:40:20.908+0000] {standard_task_runner.py:88} INFO - Job 311: Subtask transform_and_load_task
+[2024-07-23T09:40:20.963+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order_etl_daily.transform_and_load_task manual__2024-07-23T09:40:00.225503+00:00 [running]> on host 087c584822ad
+[2024-07-23T09:40:21.038+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-23T09:40:00.225503+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-23T09:40:00.225503+00:00'
+[2024-07-23T09:40:21.040+0000] {logging_mixin.py:188} INFO - Start data transformation and load stage
+[2024-07-23T09:40:21.539+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T09:40:21.772+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T09:40:23.507+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T09:40:23.748+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T09:40:23.968+0000] {stager.py:800} INFO - Executing command: ['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmp52gu_ikx', '/opt/***/plugins']
+[2024-07-23T09:40:24.040+0000] {stager.py:810} INFO - Executing command: ['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmp52gu_ikx']
+[2024-07-23T09:40:25.776+0000] {dataflow_runner.py:397} INFO - Pipeline has additional dependencies to be installed in SDK worker container, consider using the SDK container image pre-building workflow to avoid repetitive installations. Learn more on https://cloud.google.com/dataflow/docs/guides/using-custom-containers#prebuild
+[2024-07-23T09:40:25.780+0000] {environments.py:314} INFO - Using provided Python SDK container image: gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0
+[2024-07-23T09:40:25.780+0000] {environments.py:321} INFO - Python SDK container image set to "gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0" for Docker environment
+[2024-07-23T09:40:26.227+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/workflow.tar.gz...
+[2024-07-23T09:40:27.255+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/workflow.tar.gz in 1 seconds.
+[2024-07-23T09:40:27.256+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/submission_environment_dependencies.txt...
+[2024-07-23T09:40:28.158+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/submission_environment_dependencies.txt in 0 seconds.
+[2024-07-23T09:40:28.159+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/pipeline.pb...
+[2024-07-23T09:40:29.249+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721727626.219559/pipeline.pb in 1 seconds.
+[2024-07-23T09:40:29.260+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-23T09:40:29.268+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-23T09:40:30.643+0000] {apiclient.py:844} INFO - Create job: <Job
+ clientRequestId: '20240723094026221010-1548'
+ createTime: '2024-07-23T09:40:33.046717Z'
+ currentStateTime: '1970-01-01T00:00:00Z'
+ id: '2024-07-23_02_40_32-6775123213674193036'
+ location: 'asia-southeast2'
+ name: 'fact-order-bigquery-etl'
+ projectId: 'liquid-kite-423215-s2'
+ stageStates: []
+ startTime: '2024-07-23T09:40:33.046717Z'
+ steps: []
+ tempFiles: []
+ type: TypeValueValuesEnum(JOB_TYPE_BATCH, 1)>
+[2024-07-23T09:40:30.644+0000] {apiclient.py:846} INFO - Created job with id: [2024-07-23_02_40_32-6775123213674193036]
+[2024-07-23T09:40:30.645+0000] {apiclient.py:847} INFO - Submitted job: 2024-07-23_02_40_32-6775123213674193036
+[2024-07-23T09:40:30.645+0000] {apiclient.py:848} INFO - To access the Dataflow monitoring console, please navigate to https://console.cloud.google.com/dataflow/jobs/asia-southeast2/2024-07-23_02_40_32-6775123213674193036?project=liquid-kite-423215-s2
+[2024-07-23T09:40:31.005+0000] {dataflow_runner.py:153} INFO - Job 2024-07-23_02_40_32-6775123213674193036 is in state JOB_STATE_PENDING
+[2024-07-23T09:40:36.156+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:36.291Z: JOB_MESSAGE_BASIC: Worker configuration: n1-standard-1 in asia-southeast2-c.
+[2024-07-23T09:40:36.157+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.522Z: JOB_MESSAGE_BASIC: Executing operation WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/Impulse+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/FlatMap(<lambda at core.py:3788>)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/Map(decode)
+[2024-07-23T09:40:36.157+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.533Z: JOB_MESSAGE_BASIC: Executing operation Start/Impulse+Start/FlatMap(<lambda at core.py:3788>)+Start/Map(decode)
+[2024-07-23T09:40:36.158+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.543Z: JOB_MESSAGE_BASIC: Executing operation WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Impulse+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/FlatMap(<lambda at core.py:3788>)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Map(decode)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/CopyJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/GenerateFilePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/LoadJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/SchemaModJobNamePrefix
+[2024-07-23T09:40:36.158+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.554Z: JOB_MESSAGE_BASIC: Executing operation WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Impulse+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/FlatMap(<lambda at core.py:3788>)+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Map(decode)+WriteLog/WriteLogGCS/Write/WriteImpl/InitializeWrite
+[2024-07-23T09:40:36.159+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.555Z: JOB_MESSAGE_BASIC: Starting 1 workers in asia-southeast2...
+[2024-07-23T09:40:36.330+0000] {dataflow_runner.py:153} INFO - Job 2024-07-23_02_40_32-6775123213674193036 is in state JOB_STATE_RUNNING
+[2024-07-23T09:40:41.534+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:40:38.564Z: JOB_MESSAGE_BASIC: Executing operation ReadAvro/ReadAvro/Read/Impulse+ReadAvro/ReadAvro/Read/EmitSource+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/PairWithRestriction+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/SplitWithSizing
+[2024-07-23T09:41:24.682+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T09:41:22.867Z: JOB_MESSAGE_ERROR: Startup of the worker pool in zone asia-southeast2-c failed to bring up any of the desired 1 workers. Please refer to https://cloud.google.com/dataflow/docs/guides/common-errors#worker-pool-failure for help troubleshooting. QUOTA_EXCEEDED: Instance 'fact-order-bigquery-etl-07230240-u4kq-harness-dlb3' creation failed: Quota 'IN_USE_ADDRESSES' exceeded.  Limit: 4.0 in region asia-southeast2.
+[2024-07-23T09:41:24.683+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T09:41:22.878Z: JOB_MESSAGE_ERROR: Workflow failed.
+[2024-07-23T09:41:24.683+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:22.911Z: JOB_MESSAGE_BASIC: Finished operation Start/Impulse+Start/FlatMap(<lambda at core.py:3788>)+Start/Map(decode)
+[2024-07-23T09:41:24.684+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:22.911Z: JOB_MESSAGE_BASIC: Finished operation WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/Impulse+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/FlatMap(<lambda at core.py:3788>)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseEmptyPC/Map(decode)
+[2024-07-23T09:41:24.684+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.159Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S01-3-d406043b12269fb5/tmp-d406043b12269ec4@DAX.recordio."
+[2024-07-23T09:41:24.684+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.179Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S01-2-3feaed9827b45e3f/tmp-3feaed9827b45e0c@DAX.recordio."
+[2024-07-23T09:41:24.685+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.181Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S28-1-f7d7e948c6363241/tmp-f7d7e948c6363f88@DAX.recordio."
+[2024-07-23T09:41:24.685+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.186Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S01-0-9958ed80fb29f794/tmp-9958ed80fb29f1ef@DAX.recordio."
+[2024-07-23T09:41:24.686+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.192Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S01-1-de6a85a54c5678c1/tmp-de6a85a54c567240@DAX.recordio."
+[2024-07-23T09:41:24.686+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.202Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S28-0-ddacc78777554420/tmp-ddacc78777554c01@DAX.recordio."
+[2024-07-23T09:41:24.687+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.203Z: JOB_MESSAGE_WARNING: S01:WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Impulse+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/FlatMap(<lambda at core.py:3788>)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Map(decode)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/CopyJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/GenerateFilePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/LoadJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/SchemaModJobNamePrefix failed.
+[2024-07-23T09:41:24.687+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.209Z: JOB_MESSAGE_WARNING: Unable to delete temp files: "gs://ingestion_layer/tmp/fact-order-bigquery-etl.1721727626.219559/dax-tmp-2024-07-23_02_40_32-6775123213674193036-S08-0-717cd3599fc7d279/tmp-717cd3599fc7dd6c@DAX.sdfmeta."
+[2024-07-23T09:41:24.688+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.213Z: JOB_MESSAGE_WARNING: S28:WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Impulse+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/FlatMap(<lambda at core.py:3788>)+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Map(decode)+WriteLog/WriteLogGCS/Write/WriteImpl/InitializeWrite failed.
+[2024-07-23T09:41:24.688+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:23.215Z: JOB_MESSAGE_BASIC: Finished operation WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Impulse+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/FlatMap(<lambda at core.py:3788>)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/ImpulseSingleElementPC/Map(decode)+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/CopyJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/GenerateFilePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/LoadJobNamePrefix+WriteToBigQuery/WriteToBigQuery/BigQueryBatchFileLoads/SchemaModJobNamePrefix
+[2024-07-23T09:41:24.689+0000] {dataflow_runner.py:205} WARNING - 2024-07-23T09:41:23.219Z: JOB_MESSAGE_WARNING: S08:ReadAvro/ReadAvro/Read/Impulse+ReadAvro/ReadAvro/Read/EmitSource+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/PairWithRestriction+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/SplitWithSizing failed.
+[2024-07-23T09:41:24.689+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:23.225Z: JOB_MESSAGE_BASIC: Finished operation WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Impulse+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/FlatMap(<lambda at core.py:3788>)+WriteLog/WriteLogGCS/Write/WriteImpl/DoOnce/Map(decode)+WriteLog/WriteLogGCS/Write/WriteImpl/InitializeWrite
+[2024-07-23T09:41:24.689+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:23.231Z: JOB_MESSAGE_BASIC: Finished operation ReadAvro/ReadAvro/Read/Impulse+ReadAvro/ReadAvro/Read/EmitSource+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/PairWithRestriction+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/SplitWithSizing
+[2024-07-23T09:41:24.690+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:23.296Z: JOB_MESSAGE_BASIC: Stopping worker pool...
+[2024-07-23T09:41:40.979+0000] {dataflow_runner.py:203} INFO - 2024-07-23T09:41:41.670Z: JOB_MESSAGE_BASIC: Worker pool stopped.
+[2024-07-23T09:42:18.810+0000] {dataflow_runner.py:153} INFO - Job 2024-07-23_02_40_32-6775123213674193036 is in state JOB_STATE_FAILED
+[2024-07-23T09:42:21.257+0000] {dataflow_runner.py:806} ERROR - Console URL: https://console.cloud.google.com/dataflow/jobs/<RegionId>/2024-07-23_02_40_32-6775123213674193036?project=<ProjectId>
+[2024-07-23T09:42:21.258+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order.py", line 97, in transform_and_load_task
+    result.wait_until_finish()
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/dataflow_runner.py", line 807, in wait_until_finish
+    raise DataflowRuntimeException(
+apache_beam.runners.dataflow.dataflow_runner.DataflowRuntimeException: Dataflow pipeline failed. State: FAILED, Error:
+Workflow failed.
+[2024-07-23T09:42:21.274+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order_etl_daily, task_id=transform_and_load_task, execution_date=20240723T094000, start_date=20240723T094020, end_date=20240723T094221
+[2024-07-23T09:42:21.293+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 311 for task transform_and_load_task (Dataflow pipeline failed. State: FAILED, Error:
+Workflow failed.; 9269)
+[2024-07-23T09:42:21.314+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-23T09:42:21.329+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

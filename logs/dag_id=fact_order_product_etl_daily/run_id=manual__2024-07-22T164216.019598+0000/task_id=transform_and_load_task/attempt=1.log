@@ -1,0 +1,27 @@
+[2024-07-22T16:42:23.470+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T16:42:16.019598+00:00 [queued]>
+[2024-07-22T16:42:23.485+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T16:42:16.019598+00:00 [queued]>
+[2024-07-22T16:42:23.486+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-22T16:42:23.511+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-22 16:42:16.019598+00:00
+[2024-07-22T16:42:23.524+0000] {standard_task_runner.py:60} INFO - Started process 964 to run task
+[2024-07-22T16:42:23.531+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order_product_etl_daily', 'transform_and_load_task', 'manual__2024-07-22T16:42:16.019598+00:00', '--job-id', '249', '--raw', '--subdir', 'DAGS_FOLDER/fact_order_product.py', '--cfg-path', '/tmp/tmpd0t9m4e0']
+[2024-07-22T16:42:23.533+0000] {standard_task_runner.py:88} INFO - Job 249: Subtask transform_and_load_task
+[2024-07-22T16:42:23.618+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T16:42:16.019598+00:00 [running]> on host 087c584822ad
+[2024-07-22T16:42:23.791+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order_product_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-22T16:42:16.019598+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-22T16:42:16.019598+00:00'
+[2024-07-22T16:42:23.802+0000] {pipeline.py:197} INFO - Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+[2024-07-22T16:42:25.409+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order_product.py", line 88, in transform_and_load_task
+    | 'FindMaxDateString' >> beam.CombineFn(mo.MaxDateFn())
+TypeError: unsupported operand type(s) for >>: 'str' and 'CombineFn'
+[2024-07-22T16:42:25.429+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order_product_etl_daily, task_id=transform_and_load_task, execution_date=20240722T164216, start_date=20240722T164223, end_date=20240722T164225
+[2024-07-22T16:42:25.448+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 249 for task transform_and_load_task (unsupported operand type(s) for >>: 'str' and 'CombineFn'; 964)
+[2024-07-22T16:42:25.470+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-22T16:42:25.491+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

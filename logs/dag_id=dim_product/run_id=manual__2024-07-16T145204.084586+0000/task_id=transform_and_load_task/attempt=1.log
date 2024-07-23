@@ -1,0 +1,64 @@
+[2024-07-16T14:52:07.811+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dim_product.transform_and_load_task manual__2024-07-16T14:52:04.084586+00:00 [queued]>
+[2024-07-16T14:52:07.821+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dim_product.transform_and_load_task manual__2024-07-16T14:52:04.084586+00:00 [queued]>
+[2024-07-16T14:52:07.822+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-16T14:52:07.839+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-16 14:52:04.084586+00:00
+[2024-07-16T14:52:07.847+0000] {standard_task_runner.py:60} INFO - Started process 195 to run task
+[2024-07-16T14:52:07.852+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dim_product', 'transform_and_load_task', 'manual__2024-07-16T14:52:04.084586+00:00', '--job-id', '102', '--raw', '--subdir', 'DAGS_FOLDER/dim_product_orchestration.py', '--cfg-path', '/tmp/tmpmbhazucp']
+[2024-07-16T14:52:07.854+0000] {standard_task_runner.py:88} INFO - Job 102: Subtask transform_and_load_task
+[2024-07-16T14:52:07.921+0000] {task_command.py:423} INFO - Running <TaskInstance: dim_product.transform_and_load_task manual__2024-07-16T14:52:04.084586+00:00 [running]> on host d3d5a4009625
+[2024-07-16T14:52:08.030+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dim_product' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-16T14:52:04.084586+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-16T14:52:04.084586+00:00'
+[2024-07-16T14:52:08.766+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-16T14:52:09.065+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-16T14:52:11.192+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-16T14:52:11.571+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-16T14:52:12.978+0000] {dataflow_runner.py:397} INFO - Pipeline has additional dependencies to be installed in SDK worker container, consider using the SDK container image pre-building workflow to avoid repetitive installations. Learn more on https://cloud.google.com/dataflow/docs/guides/using-custom-containers#prebuild
+[2024-07-16T14:52:12.981+0000] {environments.py:314} INFO - Using provided Python SDK container image: gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0
+[2024-07-16T14:52:12.982+0000] {environments.py:321} INFO - Python SDK container image set to "gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0" for Docker environment
+[2024-07-16T14:52:13.331+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/dim-product-bigquery-etl.1721141533.320282/submission_environment_dependencies.txt...
+[2024-07-16T14:52:14.349+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/dim-product-bigquery-etl.1721141533.320282/submission_environment_dependencies.txt in 1 seconds.
+[2024-07-16T14:52:14.350+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/dim-product-bigquery-etl.1721141533.320282/pipeline.pb...
+[2024-07-16T14:52:15.418+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/dim-product-bigquery-etl.1721141533.320282/pipeline.pb in 1 seconds.
+[2024-07-16T14:52:15.432+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-16T14:52:15.438+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dim_product_orchestration.py", line 40, in transform_and_load_task
+    run_pipeline_beam(avro_file_pattern, table_spec, schema, unique_key)
+  File "/opt/airflow/plugins/my_modules/transformation_load_stage.py", line 108, in run_pipeline
+    (
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 613, in __exit__
+    self.result = self.run()
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 560, in run
+    return Pipeline.from_runner_api(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 587, in run
+    return self.runner.run_pipeline(self, self._options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/dataflow_runner.py", line 502, in run_pipeline
+    self.dataflow_client.create_job(self.job), self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/utils/retry.py", line 298, in wrapper
+    return fun(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/internal/apiclient.py", line 694, in create_job
+    self.create_job_description(job)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/internal/apiclient.py", line 788, in create_job_description
+    job.proto.environment = Environment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/internal/apiclient.py", line 284, in __init__
+    key='options', value=to_json_value(options_dict)))
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/internal/gcp/json_value.py", line 100, in to_json_value
+    key=k, value=to_json_value(v, with_type=with_type)))
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/internal/gcp/json_value.py", line 94, in to_json_value
+    entries=[to_json_value(o, with_type=with_type) for o in obj]))
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/internal/gcp/json_value.py", line 94, in <listcomp>
+    entries=[to_json_value(o, with_type=with_type) for o in obj]))
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/internal/gcp/json_value.py", line 122, in to_json_value
+    raise TypeError('Cannot convert %s to a JSON value.' % repr(obj))
+TypeError: Cannot convert PosixPath('/opt/***/plugins/my_modules/my_modules-0.0.1.tar.gz') to a JSON value.
+[2024-07-16T14:52:15.457+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=dim_product, task_id=transform_and_load_task, execution_date=20240716T145204, start_date=20240716T145207, end_date=20240716T145215
+[2024-07-16T14:52:15.476+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 102 for task transform_and_load_task (Cannot convert PosixPath('/opt/***/plugins/my_modules/my_modules-0.0.1.tar.gz') to a JSON value.; 195)
+[2024-07-16T14:52:15.504+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-16T14:52:15.524+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

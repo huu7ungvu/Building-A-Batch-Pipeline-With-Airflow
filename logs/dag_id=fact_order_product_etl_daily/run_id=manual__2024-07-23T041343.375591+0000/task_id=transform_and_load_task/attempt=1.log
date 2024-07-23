@@ -1,0 +1,56 @@
+[2024-07-23T04:14:08.516+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-23T04:13:43.375591+00:00 [queued]>
+[2024-07-23T04:14:08.544+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-23T04:13:43.375591+00:00 [queued]>
+[2024-07-23T04:14:08.546+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-23T04:14:08.578+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-23 04:13:43.375591+00:00
+[2024-07-23T04:14:08.596+0000] {standard_task_runner.py:60} INFO - Started process 4251 to run task
+[2024-07-23T04:14:08.603+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order_product_etl_daily', 'transform_and_load_task', 'manual__2024-07-23T04:13:43.375591+00:00', '--job-id', '293', '--raw', '--subdir', 'DAGS_FOLDER/fact_order_product.py', '--cfg-path', '/tmp/tmp62hd4pua']
+[2024-07-23T04:14:08.605+0000] {standard_task_runner.py:88} INFO - Job 293: Subtask transform_and_load_task
+[2024-07-23T04:14:08.676+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-23T04:13:43.375591+00:00 [running]> on host 087c584822ad
+[2024-07-23T04:14:08.816+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order_product_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-23T04:13:43.375591+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-23T04:13:43.375591+00:00'
+[2024-07-23T04:14:08.819+0000] {logging_mixin.py:188} INFO - Start data transformation and load stage
+[2024-07-23T04:14:08.827+0000] {pipeline.py:197} INFO - Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+[2024-07-23T04:14:10.896+0000] {pipeline_options.py:372} WARNING - Discarding unparseable args: ['celery', 'worker']
+[2024-07-23T04:14:10.897+0000] {pipeline_options.py:390} WARNING - Discarding invalid overrides: {'save_main_sesion': True}
+[2024-07-23T04:14:11.340+0000] {statecache.py:234} INFO - Creating state cache with size 104857600
+[2024-07-23T04:14:31.976+0000] {bigquery_file_loads.py:703} INFO - Load job has 1 files. Job name is beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0.
+[2024-07-23T04:14:31.977+0000] {bigquery_file_loads.py:739} INFO - Triggering job beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 to load data to BigQuery table <TableReference
+ datasetId: 'dw_demo'
+ projectId: 'liquid-kite-423215-s2'
+ tableId: 'fact_order_product'>.Schema: {'fields': [{'name': 'ingested_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'created_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'last_updated_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'order_product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'order_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'currency_code', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'order_quantity', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}, {'name': 'total_unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}]}. Additional parameters: {}. Source format: NEWLINE_DELIMITED_JSON
+[2024-07-23T04:14:32.672+0000] {bigquery_tools.py:579} INFO - Started BigQuery job: <JobReference
+ jobId: 'beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0'
+ location: 'asia-southeast1'
+ projectId: 'liquid-kite-423215-s2'>
+ bq show -j --format=prettyjson --project_id=liquid-kite-423215-s2 beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0
+[2024-07-23T04:14:32.997+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: RUNNING
+[2024-07-23T04:14:43.258+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_ea7fc227265c49eb961ee2a7d265eeec_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: DONE
+[2024-07-23T04:14:44.336+0000] {gcsio.py:518} INFO - Finished listing 1 files in 0.4220278263092041 seconds.
+[2024-07-23T04:14:44.337+0000] {filebasedsink.py:230} WARNING - Deleting 1 existing files in target path matching: -*-of-%(num_shards)05d
+[2024-07-23T04:14:49.730+0000] {gcsio.py:518} INFO - Finished listing 1 files in 0.27413129806518555 seconds.
+[2024-07-23T04:14:50.012+0000] {filebasedsink.py:310} INFO - Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+[2024-07-23T04:14:50.742+0000] {filebasedsink.py:357} INFO - Renamed 1 shards in 0.73 seconds.
+[2024-07-23T04:14:51.472+0000] {pipeline_options.py:372} WARNING - Discarding unparseable args: ['celery', 'worker']
+[2024-07-23T04:14:51.473+0000] {pipeline_options.py:390} WARNING - Discarding invalid overrides: {'save_main_sesion': True}
+[2024-07-23T04:14:52.031+0000] {statecache.py:234} INFO - Creating state cache with size 104857600
+[2024-07-23T04:15:11.931+0000] {bigquery_file_loads.py:703} INFO - Load job has 1 files. Job name is beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0.
+[2024-07-23T04:15:11.932+0000] {bigquery_file_loads.py:739} INFO - Triggering job beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 to load data to BigQuery table <TableReference
+ datasetId: 'dw_demo'
+ projectId: 'liquid-kite-423215-s2'
+ tableId: 'fact_order_product'>.Schema: {'fields': [{'name': 'ingested_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'created_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'last_updated_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'order_product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'order_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'currency_code', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'order_quantity', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}, {'name': 'total_unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}]}. Additional parameters: {}. Source format: NEWLINE_DELIMITED_JSON
+[2024-07-23T04:15:12.603+0000] {bigquery_tools.py:579} INFO - Started BigQuery job: <JobReference
+ jobId: 'beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0'
+ location: 'asia-southeast1'
+ projectId: 'liquid-kite-423215-s2'>
+ bq show -j --format=prettyjson --project_id=liquid-kite-423215-s2 beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0
+[2024-07-23T04:15:12.924+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: RUNNING
+[2024-07-23T04:15:23.191+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_43b74a254a24409f93dc68b09e78cb2f_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: DONE
+[2024-07-23T04:15:23.806+0000] {gcsio.py:518} INFO - Finished listing 1 files in 0.4078335762023926 seconds.
+[2024-07-23T04:15:23.807+0000] {filebasedsink.py:230} WARNING - Deleting 1 existing files in target path matching: -*-of-%(num_shards)05d
+[2024-07-23T04:15:29.524+0000] {gcsio.py:518} INFO - Finished listing 1 files in 0.34386420249938965 seconds.
+[2024-07-23T04:15:29.840+0000] {filebasedsink.py:310} INFO - Starting finalize_write threads with num_shards: 1 (skipped: 0), batches: 1, num_threads: 1
+[2024-07-23T04:15:30.569+0000] {filebasedsink.py:357} INFO - Renamed 1 shards in 0.73 seconds.
+[2024-07-23T04:15:31.067+0000] {logging_mixin.py:188} INFO - Transform and load stage successfully
+[2024-07-23T04:15:31.068+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-07-23T04:15:31.080+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fact_order_product_etl_daily, task_id=transform_and_load_task, execution_date=20240723T041343, start_date=20240723T041408, end_date=20240723T041531
+[2024-07-23T04:15:31.129+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-07-23T04:15:31.159+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

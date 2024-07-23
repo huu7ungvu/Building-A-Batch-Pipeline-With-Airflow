@@ -1,0 +1,160 @@
+[2024-07-22T07:04:47.193+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dim_customer.transform_and_load_task scheduled__2024-07-21T00:00:00+00:00 [queued]>
+[2024-07-22T07:04:47.205+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dim_customer.transform_and_load_task scheduled__2024-07-21T00:00:00+00:00 [queued]>
+[2024-07-22T07:04:47.206+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-22T07:04:47.227+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-21 00:00:00+00:00
+[2024-07-22T07:04:47.238+0000] {standard_task_runner.py:60} INFO - Started process 8824 to run task
+[2024-07-22T07:04:47.244+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dim_customer', 'transform_and_load_task', 'scheduled__2024-07-21T00:00:00+00:00', '--job-id', '208', '--raw', '--subdir', 'DAGS_FOLDER/dim_customer.py', '--cfg-path', '/tmp/tmpq427xmwy']
+[2024-07-22T07:04:47.246+0000] {standard_task_runner.py:88} INFO - Job 208: Subtask transform_and_load_task
+[2024-07-22T07:04:47.401+0000] {task_command.py:423} INFO - Running <TaskInstance: dim_customer.transform_and_load_task scheduled__2024-07-21T00:00:00+00:00 [running]> on host 087c584822ad
+[2024-07-22T07:04:47.593+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dim_customer' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-21T00:00:00+00:00'
+[2024-07-22T07:04:47.599+0000] {logging_mixin.py:188} INFO - Start data transformation and load stage
+[2024-07-22T07:04:48.393+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:04:48.786+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:04:53.397+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:04:53.741+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:04:54.445+0000] {stager.py:800} INFO - Executing command: ['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']
+[2024-07-22T07:04:54.608+0000] {stager.py:810} INFO - Executing command: ['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmpepszzq13']
+[2024-07-22T07:04:57.332+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/airflow/plugins']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/portability/stager.py", line 801, in _build_setup_package
+    processes.check_output(build_setup_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 99, in check_output
+    raise RuntimeError("Full trace: {}, \
+RuntimeError: Full trace: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']' returned non-zero exit status 1.
+,            output of the failed child process b'' 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmpepszzq13']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dim_customer.py", line 67, in transform_and_load_task
+    (
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 613, in __exit__
+    self.result = self.run()
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 560, in run
+    return Pipeline.from_runner_api(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 587, in run
+    return self.runner.run_pipeline(self, self._options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/dataflow_runner.py", line 395, in run_pipeline
+    artifacts = environments.python_sdk_dependencies(options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/transforms/environments.py", line 905, in python_sdk_dependencies
+    return stager.Stager.create_job_resources(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/portability/stager.py", line 286, in create_job_resources
+    tarball_file = Stager._build_setup_package(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/portability/stager.py", line 811, in _build_setup_package
+    processes.check_output(build_setup_args)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 99, in check_output
+    raise RuntimeError("Full trace: {}, \
+RuntimeError: Full trace: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/runners/portability/stager.py", line 801, in _build_setup_package
+    processes.check_output(build_setup_args)
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 99, in check_output
+    raise RuntimeError("Full trace: {}, \
+RuntimeError: Full trace: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']' returned non-zero exit status 1.
+,            output of the failed child process b'' 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmpepszzq13']' returned non-zero exit status 1.
+,            output of the failed child process b"running sdist\nrunning egg_info\nwriting my_modules.egg-info/PKG-INFO\nwriting dependency_links to my_modules.egg-info/dependency_links.txt\nwriting top-level names to my_modules.egg-info/top_level.txt\nreading manifest file 'my_modules.egg-info/SOURCES.txt'\nwriting manifest file 'my_modules.egg-info/SOURCES.txt'\nrunning check\ncopying files to my_modules-0.0.1...\n" 
+[2024-07-22T07:04:57.377+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=dim_customer, task_id=transform_and_load_task, execution_date=20240721T000000, start_date=20240722T070447, end_date=20240722T070457
+[2024-07-22T07:04:57.427+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 208 for task transform_and_load_task (Full trace: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/runners/portability/stager.py", line 801, in _build_setup_package
+    processes.check_output(build_setup_args)
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 99, in check_output
+    raise RuntimeError("Full trace: {}, \
+RuntimeError: Full trace: Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpepszzq13', '/opt/***/plugins']' returned non-zero exit status 1.
+,            output of the failed child process b'' 
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/***/.local/lib/python3.8/site-packages/apache_beam/utils/processes.py", line 89, in check_output
+    out = subprocess.check_output(*args, **kwargs)
+  File "/usr/local/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/usr/local/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmpepszzq13']' returned non-zero exit status 1.
+,            output of the failed child process b"running sdist\nrunning egg_info\nwriting my_modules.egg-info/PKG-INFO\nwriting dependency_links to my_modules.egg-info/dependency_links.txt\nwriting top-level names to my_modules.egg-info/top_level.txt\nreading manifest file 'my_modules.egg-info/SOURCES.txt'\nwriting manifest file 'my_modules.egg-info/SOURCES.txt'\nrunning check\ncopying files to my_modules-0.0.1...\n" ; 8824)
+[2024-07-22T07:04:57.497+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-22T07:04:57.564+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

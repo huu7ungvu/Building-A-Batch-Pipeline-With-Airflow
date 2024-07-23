@@ -1,0 +1,18 @@
+[2024-07-21T17:13:30.152+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order.ingest_data_task manual__2024-07-21T17:13:25.855826+00:00 [queued]>
+[2024-07-21T17:13:30.164+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order.ingest_data_task manual__2024-07-21T17:13:25.855826+00:00 [queued]>
+[2024-07-21T17:13:30.165+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-21T17:13:30.183+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_task> on 2024-07-21 17:13:25.855826+00:00
+[2024-07-21T17:13:30.192+0000] {standard_task_runner.py:60} INFO - Started process 8217 to run task
+[2024-07-21T17:13:30.197+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order', 'ingest_data_task', 'manual__2024-07-21T17:13:25.855826+00:00', '--job-id', '199', '--raw', '--subdir', 'DAGS_FOLDER/fact_order.py', '--cfg-path', '/tmp/tmpruys1ywv']
+[2024-07-21T17:13:30.199+0000] {standard_task_runner.py:88} INFO - Job 199: Subtask ingest_data_task
+[2024-07-21T17:13:30.266+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order.ingest_data_task manual__2024-07-21T17:13:25.855826+00:00 [running]> on host 087c584822ad
+[2024-07-21T17:13:30.367+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order' AIRFLOW_CTX_TASK_ID='ingest_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-21T17:13:25.855826+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-21T17:13:25.855826+00:00'
+[2024-07-21T17:13:30.370+0000] {logging_mixin.py:188} INFO - Start data ingestion stage
+[2024-07-21T17:13:35.794+0000] {logging_mixin.py:188} INFO - Number records captured: 8002
+[2024-07-21T17:13:36.080+0000] {logging_mixin.py:188} INFO - Created avro file successfully
+[2024-07-21T17:13:37.435+0000] {logging_mixin.py:188} INFO - Push avro file to GCS successfully
+[2024-07-21T17:13:37.436+0000] {logging_mixin.py:188} INFO - Ingest data successfully
+[2024-07-21T17:13:37.438+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-07-21T17:13:37.469+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=fact_order, task_id=ingest_data_task, execution_date=20240721T171325, start_date=20240721T171330, end_date=20240721T171337
+[2024-07-21T17:13:37.548+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-07-21T17:13:37.601+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

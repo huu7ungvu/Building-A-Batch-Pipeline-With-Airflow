@@ -1,0 +1,48 @@
+[2024-07-22T07:31:51.776+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order.transform_and_load_task manual__2024-07-22T07:31:36.541240+00:00 [queued]>
+[2024-07-22T07:31:51.789+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order.transform_and_load_task manual__2024-07-22T07:31:36.541240+00:00 [queued]>
+[2024-07-22T07:31:51.790+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-22T07:31:51.809+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-22 07:31:36.541240+00:00
+[2024-07-22T07:31:51.821+0000] {standard_task_runner.py:60} INFO - Started process 9231 to run task
+[2024-07-22T07:31:51.826+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order', 'transform_and_load_task', 'manual__2024-07-22T07:31:36.541240+00:00', '--job-id', '211', '--raw', '--subdir', 'DAGS_FOLDER/fact_order.py', '--cfg-path', '/tmp/tmpy3w0t3rj']
+[2024-07-22T07:31:51.828+0000] {standard_task_runner.py:88} INFO - Job 211: Subtask transform_and_load_task
+[2024-07-22T07:31:51.893+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order.transform_and_load_task manual__2024-07-22T07:31:36.541240+00:00 [running]> on host 087c584822ad
+[2024-07-22T07:31:52.002+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-22T07:31:36.541240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-22T07:31:36.541240+00:00'
+[2024-07-22T07:31:52.639+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:31:52.916+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-22T07:31:53.936+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order.py", line 73, in transform_and_load_task
+    p
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pvalue.py", line 138, in __or__
+    return self.pipeline.apply(ptransform, self)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 668, in apply
+    return self.apply(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 679, in apply
+    return self.apply(transform, pvalueish)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 732, in apply
+    pvalueish_result = self.runner.apply(transform, pvalueish, self._options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/runner.py", line 203, in apply
+    return self.apply_PTransform(transform, input, options)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/runner.py", line 207, in apply_PTransform
+    return transform.expand(input)
+  File "/opt/airflow/plugins/my_modules/transformation_load_stage.py", line 60, in expand
+    | 'WriteToBigQuery' >> WriteToBigQuery(
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/io/gcp/bigquery.py", line 2092, in __init__
+    self.schema = bigquery_tools.get_dict_table_schema(schema)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/io/gcp/bigquery_tools.py", line 1677, in get_dict_table_schema
+    table_schema = get_table_schema_from_string(schema)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/io/gcp/bigquery_tools.py", line 1627, in get_table_schema_from_string
+    field_name, field_type = field_and_type.split(':')
+ValueError: not enough values to unpack (expected 2, got 1)
+[2024-07-22T07:31:53.982+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order, task_id=transform_and_load_task, execution_date=20240722T073136, start_date=20240722T073151, end_date=20240722T073153
+[2024-07-22T07:31:54.023+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 211 for task transform_and_load_task (not enough values to unpack (expected 2, got 1); 9231)
+[2024-07-22T07:31:54.086+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-22T07:31:54.133+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

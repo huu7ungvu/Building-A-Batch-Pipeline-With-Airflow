@@ -1,0 +1,1050 @@
+[2024-07-23T05:46:59.051+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: test_braching_etl_daily.transform_and_load_task manual__2024-07-23T05:46:54.523698+00:00 [queued]>
+[2024-07-23T05:46:59.073+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: test_braching_etl_daily.transform_and_load_task manual__2024-07-23T05:46:54.523698+00:00 [queued]>
+[2024-07-23T05:46:59.074+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-23T05:46:59.102+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-23 05:46:54.523698+00:00
+[2024-07-23T05:46:59.115+0000] {standard_task_runner.py:60} INFO - Started process 5703 to run task
+[2024-07-23T05:46:59.120+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'test_braching_etl_daily', 'transform_and_load_task', 'manual__2024-07-23T05:46:54.523698+00:00', '--job-id', '300', '--raw', '--subdir', 'DAGS_FOLDER/test_braching.py', '--cfg-path', '/tmp/tmp_rdh2ylv']
+[2024-07-23T05:46:59.123+0000] {standard_task_runner.py:88} INFO - Job 300: Subtask transform_and_load_task
+[2024-07-23T05:46:59.211+0000] {task_command.py:423} INFO - Running <TaskInstance: test_braching_etl_daily.transform_and_load_task manual__2024-07-23T05:46:54.523698+00:00 [running]> on host 087c584822ad
+[2024-07-23T05:46:59.304+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='test_braching_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-23T05:46:54.523698+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-23T05:46:54.523698+00:00'
+[2024-07-23T05:46:59.306+0000] {logging_mixin.py:188} INFO - Start data transformation and load stage
+[2024-07-23T05:46:59.782+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T05:47:00.026+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T05:47:00.506+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T05:47:00.771+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-23T05:47:00.857+0000] {stager.py:800} INFO - Executing command: ['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmp2_syfvd_', '/opt/***/plugins']
+[2024-07-23T05:47:00.905+0000] {stager.py:810} INFO - Executing command: ['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmp2_syfvd_']
+[2024-07-23T05:47:02.813+0000] {dataflow_runner.py:397} INFO - Pipeline has additional dependencies to be installed in SDK worker container, consider using the SDK container image pre-building workflow to avoid repetitive installations. Learn more on https://cloud.google.com/dataflow/docs/guides/using-custom-containers#prebuild
+[2024-07-23T05:47:02.819+0000] {environments.py:314} INFO - Using provided Python SDK container image: gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0
+[2024-07-23T05:47:02.820+0000] {environments.py:321} INFO - Python SDK container image set to "gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0" for Docker environment
+[2024-07-23T05:47:02.975+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/workflow.tar.gz...
+[2024-07-23T05:47:04.019+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/workflow.tar.gz in 1 seconds.
+[2024-07-23T05:47:04.019+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/submission_environment_dependencies.txt...
+[2024-07-23T05:47:04.910+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/submission_environment_dependencies.txt in 0 seconds.
+[2024-07-23T05:47:04.911+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/pipeline.pb...
+[2024-07-23T05:47:05.853+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/test-braching-bigquery-etl.1721713622.963016/pipeline.pb in 0 seconds.
+[2024-07-23T05:47:05.862+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-23T05:47:05.871+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-23T05:47:07.356+0000] {apiclient.py:844} INFO - Create job: <Job
+ clientRequestId: '20240723054702964600-7506'
+ createTime: '2024-07-23T05:47:09.682505Z'
+ currentStateTime: '1970-01-01T00:00:00Z'
+ id: '2024-07-22_22_47_08-18168607215383714062'
+ location: 'asia-southeast2'
+ name: 'test-braching-bigquery-etl'
+ projectId: 'liquid-kite-423215-s2'
+ stageStates: []
+ startTime: '2024-07-23T05:47:09.682505Z'
+ steps: []
+ tempFiles: []
+ type: TypeValueValuesEnum(JOB_TYPE_BATCH, 1)>
+[2024-07-23T05:47:07.358+0000] {apiclient.py:846} INFO - Created job with id: [2024-07-22_22_47_08-18168607215383714062]
+[2024-07-23T05:47:07.358+0000] {apiclient.py:847} INFO - Submitted job: 2024-07-22_22_47_08-18168607215383714062
+[2024-07-23T05:47:07.359+0000] {apiclient.py:848} INFO - To access the Dataflow monitoring console, please navigate to https://console.cloud.google.com/dataflow/jobs/asia-southeast2/2024-07-22_22_47_08-18168607215383714062?project=liquid-kite-423215-s2
+[2024-07-23T05:47:07.665+0000] {dataflow_runner.py:153} INFO - Job 2024-07-22_22_47_08-18168607215383714062 is in state JOB_STATE_PENDING
+[2024-07-23T05:47:12.803+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:47:13.269Z: JOB_MESSAGE_BASIC: Worker configuration: n1-standard-1 in asia-southeast2-c.
+[2024-07-23T05:47:12.956+0000] {dataflow_runner.py:153} INFO - Job 2024-07-22_22_47_08-18168607215383714062 is in state JOB_STATE_RUNNING
+[2024-07-23T05:47:18.167+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:47:15.316Z: JOB_MESSAGE_BASIC: Executing operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Create
+[2024-07-23T05:47:18.168+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:47:15.373Z: JOB_MESSAGE_BASIC: Starting 1 workers in asia-southeast2...
+[2024-07-23T05:47:18.169+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:47:15.618Z: JOB_MESSAGE_BASIC: Finished operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Create
+[2024-07-23T05:47:23.446+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:47:24.542Z: JOB_MESSAGE_BASIC: Executing operation CreateNumbers/Impulse+CreateNumbers/FlatMap(<lambda at core.py:3788>)+CreateNumbers/MaybeReshuffle/Reshuffle/AddRandomKeys+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/Map(reify_timestamps)+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Reify+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Write
+[2024-07-23T05:51:04.530+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:05.823Z: JOB_MESSAGE_BASIC: All workers have finished the startup processes and began to receive work requests.
+[2024-07-23T05:51:04.531+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:06.562Z: JOB_MESSAGE_BASIC: Finished operation CreateNumbers/Impulse+CreateNumbers/FlatMap(<lambda at core.py:3788>)+CreateNumbers/MaybeReshuffle/Reshuffle/AddRandomKeys+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/Map(reify_timestamps)+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Reify+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Write
+[2024-07-23T05:51:04.531+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:06.601Z: JOB_MESSAGE_BASIC: Executing operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Close
+[2024-07-23T05:51:09.805+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:06.945Z: JOB_MESSAGE_BASIC: Finished operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Close
+[2024-07-23T05:51:09.806+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:06.984Z: JOB_MESSAGE_BASIC: Executing operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Read+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/GroupByWindow+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/FlatMap(restore_timestamps)+CreateNumbers/MaybeReshuffle/Reshuffle/RemoveRandomKeys+CreateNumbers/Map(decode)+Partition/ParDo(ApplyPartitionFnFn)/ParDo(ApplyPartitionFnFn)+ProcessEven+ProcessOdd
+[2024-07-23T05:51:09.806+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T05:51:07.228Z: JOB_MESSAGE_ERROR: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+[2024-07-23T05:51:09.807+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T05:51:07.399Z: JOB_MESSAGE_ERROR: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+[2024-07-23T05:51:09.807+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T05:51:07.576Z: JOB_MESSAGE_ERROR: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+[2024-07-23T05:51:09.808+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T05:51:07.717Z: JOB_MESSAGE_ERROR: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+[2024-07-23T05:51:09.809+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:07.774Z: JOB_MESSAGE_BASIC: Finished operation CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Read+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/GroupByWindow+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/FlatMap(restore_timestamps)+CreateNumbers/MaybeReshuffle/Reshuffle/RemoveRandomKeys+CreateNumbers/Map(decode)+Partition/ParDo(ApplyPartitionFnFn)/ParDo(ApplyPartitionFnFn)+ProcessEven+ProcessOdd
+[2024-07-23T05:51:09.809+0000] {dataflow_runner.py:207} ERROR - 2024-07-23T05:51:07.828Z: JOB_MESSAGE_ERROR: Workflow failed. Causes: S04:CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/Read+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/GroupByKey/GroupByWindow+CreateNumbers/MaybeReshuffle/Reshuffle/ReshufflePerKey/FlatMap(restore_timestamps)+CreateNumbers/MaybeReshuffle/Reshuffle/RemoveRandomKeys+CreateNumbers/Map(decode)+Partition/ParDo(ApplyPartitionFnFn)/ParDo(ApplyPartitionFnFn)+ProcessEven+ProcessOdd failed., The job failed because a work item has failed 4 times. Look in previous log entries for the cause of each one of the 4 failures. If the logs only contain generic timeout errors related to accessing external resources, such as MongoDB, verify that the worker service account has permission to access the resource's subnetwork. For more information, see https://cloud.google.com/dataflow/docs/guides/common-errors. The work item was attempted on these workers: 
+
+      Root cause: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+      Worker ID: test-braching-bigquery-et-07222247-0o9b-harness-kpqk,
+
+      Root cause: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+      Worker ID: test-braching-bigquery-et-07222247-0o9b-harness-kpqk,
+
+      Root cause: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+      Worker ID: test-braching-bigquery-et-07222247-0o9b-harness-kpqk,
+
+      Root cause: Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+      Worker ID: test-braching-bigquery-et-07222247-0o9b-harness-kpqk
+[2024-07-23T05:51:09.811+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:07.943Z: JOB_MESSAGE_BASIC: Stopping worker pool...
+[2024-07-23T05:51:51.897+0000] {dataflow_runner.py:203} INFO - 2024-07-23T05:51:53.224Z: JOB_MESSAGE_BASIC: Worker pool stopped.
+[2024-07-23T05:51:57.510+0000] {dataflow_runner.py:153} INFO - Job 2024-07-22_22_47_08-18168607215383714062 is in state JOB_STATE_FAILED
+[2024-07-23T05:51:57.554+0000] {dataflow_runner.py:806} ERROR - Console URL: https://console.cloud.google.com/dataflow/jobs/<RegionId>/2024-07-22_22_47_08-18168607215383714062?project=<ProjectId>
+[2024-07-23T05:51:57.556+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test_braching.py", line 81, in transform_and_load_task
+    odd_numbers | 'ProcessOdd' >> beam.Map(process_odd_numbers)
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 614, in __exit__
+    self.result.wait_until_finish()
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/dataflow_runner.py", line 807, in wait_until_finish
+    raise DataflowRuntimeException(
+apache_beam.runners.dataflow.dataflow_runner.DataflowRuntimeException: Dataflow pipeline failed. State: FAILED, Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+[2024-07-23T05:51:57.573+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=test_braching_etl_daily, task_id=transform_and_load_task, execution_date=20240723T054654, start_date=20240723T054659, end_date=20240723T055157
+[2024-07-23T05:51:57.601+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 300 for task transform_and_load_task (Dataflow pipeline failed. State: FAILED, Error:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 418, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 311, in _execute
+    response = task()
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 386, in <lambda>
+    lambda: self.create_worker().do_instruction(request), request)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 656, in do_instruction
+    return getattr(self, request_type)(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 687, in process_bundle
+    bundle_processor = self.bundle_processor_cache.get(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/sdk_worker.py", line 510, in get
+    processor = bundle_processor.BundleProcessor(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 974, in __init__
+    self.ops = self.create_execution_tree(self.process_bundle_descriptor)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1036, in create_execution_tree
+    return collections.OrderedDict([(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1039, in <listcomp>
+    get_operation(transform_id))) for transform_id in sorted(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1012, in get_operation
+    transform_consumers = {
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <dictcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1013, in <listcomp>
+    tag: [get_operation(op) for op in pcoll_consumers[pcoll_id]]
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 875, in wrapper
+    result = cache[args] = func(*args)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1023, in get_operation
+    return transform_factory.create_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1337, in create_operation
+    return creator(self, transform_id, transform_proto, payload, consumers)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1684, in create_par_do
+    return _create_pardo_operation(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/runners/worker/bundle_processor.py", line 1730, in _create_pardo_operation
+    dofn_data = pickler.loads(serialized_fn)
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/pickler.py", line 51, in loads
+    return desired_pickle_lib.loads(
+  File "/usr/local/lib/python3.8/site-packages/apache_beam/internal/dill_pickler.py", line 422, in loads
+    return dill.loads(s)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 275, in loads
+    return load(file, ignore, **kwds)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 270, in load
+    return Unpickler(file, ignore=ignore, **kwds).load()
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 472, in load
+    obj = StockUnpickler.load(self)
+  File "/usr/local/lib/python3.8/site-packages/dill/_dill.py", line 826, in _import_module
+    return __import__(import_name)
+ModuleNotFoundError: No module named 'unusual_prefix_f73f1b7c3ea61bd554689b31c3b997f9951132ec_test_braching'
+; 5703)
+[2024-07-23T05:51:57.623+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-23T05:51:57.642+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

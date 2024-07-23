@@ -1,0 +1,74 @@
+[2024-07-22T17:25:33.376+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:25:28.494456+00:00 [queued]>
+[2024-07-22T17:25:33.390+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:25:28.494456+00:00 [queued]>
+[2024-07-22T17:25:33.392+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-22T17:25:33.412+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-22 17:25:28.494456+00:00
+[2024-07-22T17:25:33.423+0000] {standard_task_runner.py:60} INFO - Started process 1762 to run task
+[2024-07-22T17:25:33.430+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order_product_etl_daily', 'transform_and_load_task', 'manual__2024-07-22T17:25:28.494456+00:00', '--job-id', '266', '--raw', '--subdir', 'DAGS_FOLDER/fact_order_product.py', '--cfg-path', '/tmp/tmpsfdztbri']
+[2024-07-22T17:25:33.432+0000] {standard_task_runner.py:88} INFO - Job 266: Subtask transform_and_load_task
+[2024-07-22T17:25:33.506+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:25:28.494456+00:00 [running]> on host 087c584822ad
+[2024-07-22T17:25:33.630+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order_product_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-22T17:25:28.494456+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-22T17:25:28.494456+00:00'
+[2024-07-22T17:25:33.640+0000] {pipeline.py:197} INFO - Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+[2024-07-22T17:25:35.509+0000] {pipeline_options.py:372} WARNING - Discarding unparseable args: ['celery', 'worker']
+[2024-07-22T17:25:35.510+0000] {pipeline_options.py:390} WARNING - Discarding invalid overrides: {'save_main_sesion': True}
+[2024-07-22T17:25:35.872+0000] {statecache.py:234} INFO - Creating state cache with size 104857600
+[2024-07-22T17:25:55.026+0000] {bigquery_file_loads.py:703} INFO - Load job has 1 files. Job name is beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0.
+[2024-07-22T17:25:55.026+0000] {bigquery_file_loads.py:739} INFO - Triggering job beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 to load data to BigQuery table <TableReference
+ datasetId: 'dw_demo'
+ projectId: 'liquid-kite-423215-s2'
+ tableId: 'fact_order_product'>.Schema: {'fields': [{'name': 'ingested_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'created_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'last_updated_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'order_product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'order_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'currency_code', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'order_quantity', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}, {'name': 'total_unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}]}. Additional parameters: {}. Source format: NEWLINE_DELIMITED_JSON
+[2024-07-22T17:25:55.553+0000] {bigquery_tools.py:579} INFO - Started BigQuery job: <JobReference
+ jobId: 'beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0'
+ location: 'asia-southeast1'
+ projectId: 'liquid-kite-423215-s2'>
+ bq show -j --format=prettyjson --project_id=liquid-kite-423215-s2 beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0
+[2024-07-22T17:25:55.734+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: RUNNING
+[2024-07-22T17:26:05.944+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_790e597d7c3640208cb822fb3112419c_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: DONE
+[2024-07-22T17:26:10.294+0000] {xcom.py:664} ERROR - Object of type RunnerResult is not JSON serializable. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config or make sure to decorate your object with attr.
+[2024-07-22T17:26:10.296+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 91, in default
+    return serialize(o)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/serialization/serde.py", line 180, in serialize
+    raise TypeError(f"cannot serialize object of type {cls}")
+TypeError: cannot serialize object of type <class 'apache_beam.runners.portability.fn_api_runner.fn_runner.RunnerResult'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order_product.py", line 100, in transform_and_load_task
+    kwargs['ti'].xcom_push(key='max_value', value=max_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 79, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2980, in xcom_push
+    XCom.set(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom.py", line 247, in set
+    value = cls.serialize_value(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom.py", line 662, in serialize_value
+    return json.dumps(value, cls=XComEncoder).encode("UTF-8")
+  File "/usr/local/lib/python3.8/json/__init__.py", line 234, in dumps
+    return cls(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 104, in encode
+    return super().encode(o)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/json.py", line 93, in default
+    return super().default(o)
+  File "/usr/local/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type RunnerResult is not JSON serializable
+[2024-07-22T17:26:10.321+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order_product_etl_daily, task_id=transform_and_load_task, execution_date=20240722T172528, start_date=20240722T172533, end_date=20240722T172610
+[2024-07-22T17:26:10.342+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 266 for task transform_and_load_task (Object of type RunnerResult is not JSON serializable; 1762)
+[2024-07-22T17:26:10.405+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-22T17:26:10.440+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

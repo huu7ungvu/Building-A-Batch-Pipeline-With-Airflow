@@ -1,0 +1,89 @@
+[2024-07-21T17:43:22.134+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order.transform_and_load_task manual__2024-07-21T17:43:12.723176+00:00 [queued]>
+[2024-07-21T17:43:22.146+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order.transform_and_load_task manual__2024-07-21T17:43:12.723176+00:00 [queued]>
+[2024-07-21T17:43:22.147+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-21T17:43:22.165+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-21 17:43:12.723176+00:00
+[2024-07-21T17:43:22.174+0000] {standard_task_runner.py:60} INFO - Started process 8664 to run task
+[2024-07-21T17:43:22.178+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order', 'transform_and_load_task', 'manual__2024-07-21T17:43:12.723176+00:00', '--job-id', '201', '--raw', '--subdir', 'DAGS_FOLDER/fact_order.py', '--cfg-path', '/tmp/tmpc9tzvy6l']
+[2024-07-21T17:43:22.180+0000] {standard_task_runner.py:88} INFO - Job 201: Subtask transform_and_load_task
+[2024-07-21T17:43:22.241+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order.transform_and_load_task manual__2024-07-21T17:43:12.723176+00:00 [running]> on host 087c584822ad
+[2024-07-21T17:43:22.343+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-21T17:43:12.723176+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-21T17:43:12.723176+00:00'
+[2024-07-21T17:43:23.035+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-21T17:43:23.438+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-21T17:43:24.578+0000] {pipeline_options.py:923} WARNING - Bucket specified in temp_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-21T17:43:24.829+0000] {pipeline_options.py:923} WARNING - Bucket specified in staging_location has soft-delete policy enabled. To avoid being billed for unnecessary storage costs, turn off the soft delete feature on buckets that your Dataflow jobs use for temporary and staging storage. For more information, see https://cloud.google.com/storage/docs/use-soft-delete#remove-soft-delete-policy.
+[2024-07-21T17:43:24.948+0000] {stager.py:800} INFO - Executing command: ['/usr/local/bin/python', '-m', 'build', '--no-isolation', '--sdist', '--outdir', '/tmp/tmpcai024ax', '/opt/***/plugins']
+[2024-07-21T17:43:25.025+0000] {stager.py:810} INFO - Executing command: ['/usr/local/bin/python', 'setup.py', 'sdist', '--dist-dir', '/tmp/tmpcai024ax']
+[2024-07-21T17:43:27.832+0000] {dataflow_runner.py:397} INFO - Pipeline has additional dependencies to be installed in SDK worker container, consider using the SDK container image pre-building workflow to avoid repetitive installations. Learn more on https://cloud.google.com/dataflow/docs/guides/using-custom-containers#prebuild
+[2024-07-21T17:43:27.836+0000] {environments.py:314} INFO - Using provided Python SDK container image: gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0
+[2024-07-21T17:43:27.837+0000] {environments.py:321} INFO - Python SDK container image set to "gcr.io/cloud-dataflow/v1beta3/beam_python3.8_sdk:2.57.0" for Docker environment
+[2024-07-21T17:43:27.981+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/workflow.tar.gz...
+[2024-07-21T17:43:29.039+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/workflow.tar.gz in 1 seconds.
+[2024-07-21T17:43:29.040+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/submission_environment_dependencies.txt...
+[2024-07-21T17:43:30.021+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/submission_environment_dependencies.txt in 0 seconds.
+[2024-07-21T17:43:30.022+0000] {apiclient.py:663} INFO - Starting GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/pipeline.pb...
+[2024-07-21T17:43:30.902+0000] {apiclient.py:673} INFO - Completed GCS upload to gs://ingestion_layer/staging/fact-order-bigquery-etl.1721583807.970698/pipeline.pb in 0 seconds.
+[2024-07-21T17:43:30.913+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-21T17:43:30.925+0000] {pipeline_options.py:339} WARNING - Unknown pipeline options received: celery,worker. Ignore if flags are used for internal purposes.
+[2024-07-21T17:43:32.391+0000] {apiclient.py:844} INFO - Create job: <Job
+ clientRequestId: '20240721174327971876-8954'
+ createTime: '2024-07-21T17:43:32.890873Z'
+ currentStateTime: '1970-01-01T00:00:00Z'
+ id: '2024-07-21_10_43_32-10513866642990194002'
+ location: 'asia-southeast2'
+ name: 'fact-order-bigquery-etl'
+ projectId: 'liquid-kite-423215-s2'
+ stageStates: []
+ startTime: '2024-07-21T17:43:32.890873Z'
+ steps: []
+ tempFiles: []
+ type: TypeValueValuesEnum(JOB_TYPE_BATCH, 1)>
+[2024-07-21T17:43:32.399+0000] {apiclient.py:846} INFO - Created job with id: [2024-07-21_10_43_32-10513866642990194002]
+[2024-07-21T17:43:32.408+0000] {apiclient.py:847} INFO - Submitted job: 2024-07-21_10_43_32-10513866642990194002
+[2024-07-21T17:43:32.410+0000] {apiclient.py:848} INFO - To access the Dataflow monitoring console, please navigate to https://console.cloud.google.com/dataflow/jobs/asia-southeast2/2024-07-21_10_43_32-10513866642990194002?project=liquid-kite-423215-s2
+[2024-07-21T17:43:32.790+0000] {dataflow_runner.py:153} INFO - Job 2024-07-21_10_43_32-10513866642990194002 is in state JOB_STATE_PENDING
+[2024-07-21T17:43:37.998+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:43:36.584Z: JOB_MESSAGE_BASIC: Worker configuration: n1-standard-1 in asia-southeast2-c.
+[2024-07-21T17:43:37.999+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:43:38.411Z: JOB_MESSAGE_BASIC: Executing operation Start/Impulse+Start/FlatMap(<lambda at core.py:3788>)+Start/Map(decode)
+[2024-07-21T17:43:38.000+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:43:38.422Z: JOB_MESSAGE_BASIC: Executing operation ReadAvro/ReadAvro/Read/Impulse+ReadAvro/ReadAvro/Read/EmitSource+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/PairWithRestriction+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/SplitWithSizing
+[2024-07-21T17:43:38.155+0000] {dataflow_runner.py:153} INFO - Job 2024-07-21_10_43_32-10513866642990194002 is in state JOB_STATE_RUNNING
+[2024-07-21T17:43:43.294+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:43:38.458Z: JOB_MESSAGE_BASIC: Starting 1 workers in asia-southeast2...
+[2024-07-21T17:47:10.927+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:07.988Z: JOB_MESSAGE_BASIC: All workers have finished the startup processes and began to receive work requests.
+[2024-07-21T17:47:10.930+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:09.607Z: JOB_MESSAGE_BASIC: Finished operation Start/Impulse+Start/FlatMap(<lambda at core.py:3788>)+Start/Map(decode)
+[2024-07-21T17:47:10.932+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:10.068Z: JOB_MESSAGE_BASIC: Finished operation ReadAvro/ReadAvro/Read/Impulse+ReadAvro/ReadAvro/Read/EmitSource+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/PairWithRestriction+ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/SplitWithSizing
+[2024-07-21T17:47:10.933+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:10.120Z: JOB_MESSAGE_BASIC: Executing operation ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/ProcessElementAndRestrictionWithSizing+Print Element Type
+[2024-07-21T17:47:16.247+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:12.060Z: JOB_MESSAGE_BASIC: Finished operation ref_AppliedPTransform_ReadAvro-ReadAvro-Read-SDFBoundedSourceReader-ParDo-SDFBoundedSourceDoFn-_13/ProcessElementAndRestrictionWithSizing+Print Element Type
+[2024-07-21T17:47:16.249+0000] {dataflow_runner.py:203} INFO - 2024-07-21T17:47:12.161Z: JOB_MESSAGE_BASIC: Stopping worker pool...
+[2024-07-22T07:02:44.960+0000] {local_task_job_runner.py:211} ERROR - Heartbeat time limit exceeded!
+[2024-07-22T07:02:45.850+0000] {process_utils.py:131} INFO - Sending 15 to group 8664. PIDs of all processes in the group: [8664]
+[2024-07-22T07:02:46.066+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 8664
+[2024-07-22T07:02:46.164+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-07-22T07:03:02.426+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order.py", line 72, in transform_and_load_task
+    (
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/pipeline.py", line 614, in __exit__
+    self.result.wait_until_finish()
+  File "/home/airflow/.local/lib/python3.8/site-packages/apache_beam/runners/dataflow/dataflow_runner.py", line 794, in wait_until_finish
+    time.sleep(5.0)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2024-07-22T07:03:09.684+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order, task_id=transform_and_load_task, execution_date=20240721T174312, start_date=20240721T174322, end_date=20240722T070308
+[2024-07-22T07:03:23.404+0000] {google_auth_httplib2.py:238} INFO - Refreshing credentials due to a 401 response. Attempt 1/2.
+[2024-07-22T07:03:25.243+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 201 for task transform_and_load_task ((psycopg2.errors.DeadlockDetected) deadlock detected
+DETAIL:  Process 91114 waits for ShareLock on transaction 448369; blocked by process 91102.
+Process 91102 waits for ShareLock on transaction 448363; blocked by process 91114.
+HINT:  See server log for query details.
+CONTEXT:  while updating tuple (2,16) in relation "dag_run"
+
+[SQL: UPDATE dag_run SET last_scheduling_decision=%(last_scheduling_decision)s, updated_at=%(updated_at)s WHERE dag_run.id = %(dag_run_id)s]
+[parameters: {'last_scheduling_decision': datetime.datetime(2024, 7, 21, 17, 43, 21, 942878, tzinfo=Timezone('UTC')), 'updated_at': datetime.datetime(2024, 7, 21, 17, 43, 21, 947174, tzinfo=Timezone('UTC')), 'dag_run_id': 125}]
+(Background on this error at: https://sqlalche.me/e/14/e3q8); 8664)
+[2024-07-22T07:03:26.256+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=8664, status='terminated', exitcode=1, started='17:43:21') (8664) terminated with exit code 1

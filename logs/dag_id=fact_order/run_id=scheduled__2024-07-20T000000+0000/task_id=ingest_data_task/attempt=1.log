@@ -1,0 +1,53 @@
+[2024-07-21T17:08:15.814+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [queued]>
+[2024-07-21T17:08:15.831+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [queued]>
+[2024-07-21T17:08:15.832+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-21T17:08:15.858+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_task> on 2024-07-20 00:00:00+00:00
+[2024-07-21T17:08:15.871+0000] {standard_task_runner.py:60} INFO - Started process 8131 to run task
+[2024-07-21T17:08:15.877+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order', 'ingest_data_task', 'scheduled__2024-07-20T00:00:00+00:00', '--job-id', '197', '--raw', '--subdir', 'DAGS_FOLDER/fact_order.py', '--cfg-path', '/tmp/tmpo8y2t457']
+[2024-07-21T17:08:15.879+0000] {standard_task_runner.py:88} INFO - Job 197: Subtask ingest_data_task
+[2024-07-21T17:08:15.970+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [running]> on host 087c584822ad
+[2024-07-21T17:08:16.082+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order' AIRFLOW_CTX_TASK_ID='ingest_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-20T00:00:00+00:00'
+[2024-07-21T17:08:16.085+0000] {logging_mixin.py:188} INFO - Start data ingestion stage
+[2024-07-21T17:08:22.290+0000] {logging_mixin.py:188} INFO - Number records captured: 8002
+[2024-07-21T17:08:22.681+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "fastavro/_write.pyx", line 130, in fastavro._write.write_utf8
+AttributeError: 'int' object has no attribute 'encode'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "fastavro/_write.pyx", line 431, in fastavro._write.write_data
+  File "fastavro/_write.pyx", line 132, in fastavro._write.write_utf8
+TypeError: must be string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order.py", line 29, in ingest_data_task
+    ingest_data(db_table_name)
+  File "/opt/airflow/plugins/my_modules/ingestion_stage.py", line 128, in ingest_data
+    capture_data_change(pool,table_name)
+  File "/opt/airflow/plugins/my_modules/ingestion_stage.py", line 103, in capture_data_change
+    fastavro.writer(file,schema,records)
+  File "fastavro/_write.pyx", line 790, in fastavro._write.writer
+  File "fastavro/_write.pyx", line 732, in fastavro._write.Writer.write
+  File "fastavro/_write.pyx", line 469, in fastavro._write.write_data
+  File "fastavro/_write.pyx", line 459, in fastavro._write.write_data
+  File "fastavro/_write.pyx", line 403, in fastavro._write.write_record
+  File "fastavro/_write.pyx", line 468, in fastavro._write.write_data
+  File "fastavro/_write.pyx", line 431, in fastavro._write.write_data
+  File "fastavro/_write.pyx", line 132, in fastavro._write.write_utf8
+TypeError: must be string on field total_product_order_quantity
+[2024-07-21T17:08:22.749+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order, task_id=ingest_data_task, execution_date=20240720T000000, start_date=20240721T170815, end_date=20240721T170822
+[2024-07-21T17:08:22.811+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 197 for task ingest_data_task (must be string on field total_product_order_quantity; 8131)
+[2024-07-21T17:08:22.888+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-21T17:08:22.998+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

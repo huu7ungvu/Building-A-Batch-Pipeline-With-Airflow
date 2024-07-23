@@ -1,0 +1,35 @@
+[2024-07-21T16:35:59.519+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dim_country.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [queued]>
+[2024-07-21T16:35:59.533+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dim_country.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [queued]>
+[2024-07-21T16:35:59.534+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-21T16:35:59.553+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): ingest_data_task> on 2024-07-20 00:00:00+00:00
+[2024-07-21T16:35:59.564+0000] {standard_task_runner.py:60} INFO - Started process 7640 to run task
+[2024-07-21T16:35:59.570+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dim_country', 'ingest_data_task', 'scheduled__2024-07-20T00:00:00+00:00', '--job-id', '192', '--raw', '--subdir', 'DAGS_FOLDER/dim_country.py', '--cfg-path', '/tmp/tmp37s8o9gi']
+[2024-07-21T16:35:59.573+0000] {standard_task_runner.py:88} INFO - Job 192: Subtask ingest_data_task
+[2024-07-21T16:35:59.655+0000] {task_command.py:423} INFO - Running <TaskInstance: dim_country.ingest_data_task scheduled__2024-07-20T00:00:00+00:00 [running]> on host 087c584822ad
+[2024-07-21T16:35:59.767+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dim_country' AIRFLOW_CTX_TASK_ID='ingest_data_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-20T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-20T00:00:00+00:00'
+[2024-07-21T16:35:59.769+0000] {logging_mixin.py:188} INFO - Start data ingestion stage
+[2024-07-21T16:36:01.269+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dim_country.py", line 29, in ingest_data_task
+    ingest_data(db_table_name)
+  File "/opt/airflow/plugins/my_modules/ingestion_stage.py", line 128, in ingest_data
+    capture_data_change(pool,table_name)
+  File "/opt/airflow/plugins/my_modules/ingestion_stage.py", line 67, in capture_data_change
+    last_updated_ts = last_updated_ts_df[last_updated_ts_df['table_name'] == table_name].iloc[0,1]
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexing.py", line 1096, in __getitem__
+    return self.obj._get_value(*key, takeable=self._takeable)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 3868, in _get_value
+    return series._values[index]
+IndexError: index 0 is out of bounds for axis 0 with size 0
+[2024-07-21T16:36:01.300+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=dim_country, task_id=ingest_data_task, execution_date=20240720T000000, start_date=20240721T163559, end_date=20240721T163601
+[2024-07-21T16:36:01.321+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 192 for task ingest_data_task (index 0 is out of bounds for axis 0 with size 0; 7640)
+[2024-07-21T16:36:01.357+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-21T16:36:01.382+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

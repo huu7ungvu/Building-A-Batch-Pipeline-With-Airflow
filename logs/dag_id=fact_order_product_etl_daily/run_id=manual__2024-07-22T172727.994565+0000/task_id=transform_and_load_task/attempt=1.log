@@ -1,0 +1,43 @@
+[2024-07-22T17:27:36.281+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:27:27.994565+00:00 [queued]>
+[2024-07-22T17:27:36.293+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:27:27.994565+00:00 [queued]>
+[2024-07-22T17:27:36.293+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-07-22T17:27:36.313+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): transform_and_load_task> on 2024-07-22 17:27:27.994565+00:00
+[2024-07-22T17:27:36.322+0000] {standard_task_runner.py:60} INFO - Started process 1813 to run task
+[2024-07-22T17:27:36.327+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'fact_order_product_etl_daily', 'transform_and_load_task', 'manual__2024-07-22T17:27:27.994565+00:00', '--job-id', '267', '--raw', '--subdir', 'DAGS_FOLDER/fact_order_product.py', '--cfg-path', '/tmp/tmpoa5ew0td']
+[2024-07-22T17:27:36.329+0000] {standard_task_runner.py:88} INFO - Job 267: Subtask transform_and_load_task
+[2024-07-22T17:27:36.405+0000] {task_command.py:423} INFO - Running <TaskInstance: fact_order_product_etl_daily.transform_and_load_task manual__2024-07-22T17:27:27.994565+00:00 [running]> on host 087c584822ad
+[2024-07-22T17:27:36.568+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fact_order_product_etl_daily' AIRFLOW_CTX_TASK_ID='transform_and_load_task' AIRFLOW_CTX_EXECUTION_DATE='2024-07-22T17:27:27.994565+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-22T17:27:27.994565+00:00'
+[2024-07-22T17:27:36.578+0000] {pipeline.py:197} INFO - Missing pipeline option (runner). Executing pipeline using the default runner: DirectRunner.
+[2024-07-22T17:27:38.438+0000] {pipeline_options.py:372} WARNING - Discarding unparseable args: ['celery', 'worker']
+[2024-07-22T17:27:38.438+0000] {pipeline_options.py:390} WARNING - Discarding invalid overrides: {'save_main_sesion': True}
+[2024-07-22T17:27:38.785+0000] {statecache.py:234} INFO - Creating state cache with size 104857600
+[2024-07-22T17:27:57.187+0000] {bigquery_file_loads.py:703} INFO - Load job has 1 files. Job name is beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0.
+[2024-07-22T17:27:57.188+0000] {bigquery_file_loads.py:739} INFO - Triggering job beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 to load data to BigQuery table <TableReference
+ datasetId: 'dw_demo'
+ projectId: 'liquid-kite-423215-s2'
+ tableId: 'fact_order_product'>.Schema: {'fields': [{'name': 'ingested_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'created_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'last_updated_at', 'type': 'TIMESTAMP', 'mode': 'NULLABLE'}, {'name': 'order_product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'order_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'product_id', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'currency_code', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'order_quantity', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}, {'name': 'total_unit_price', 'type': 'NUMERIC', 'mode': 'NULLABLE'}]}. Additional parameters: {}. Source format: NEWLINE_DELIMITED_JSON
+[2024-07-22T17:27:57.744+0000] {bigquery_tools.py:579} INFO - Started BigQuery job: <JobReference
+ jobId: 'beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0'
+ location: 'asia-southeast1'
+ projectId: 'liquid-kite-423215-s2'>
+ bq show -j --format=prettyjson --project_id=liquid-kite-423215-s2 beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0
+[2024-07-22T17:27:57.944+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: RUNNING
+[2024-07-22T17:28:08.287+0000] {bigquery_tools.py:652} INFO - Job liquid-kite-423215-s2:asia-southeast1.beam_bq_job_LOAD_factorderproductbigqueryetl_LOAD_STEP_843597c7a96949e9baa85d9532c6a8e6_365553b2bb534d4c2ee23362d5c8590c_pane0_partition0 status: DONE
+[2024-07-22T17:28:12.442+0000] {logging_mixin.py:188} INFO - hello:  <apache_beam.runners.portability.fn_api_runner.fn_runner.RunnerResult object at 0x7f7e8b9fabe0>
+[2024-07-22T17:28:12.443+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/fact_order_product.py", line 102, in transform_and_load_task
+    kwargs['ti'].xcom_push(key='max_value', value=max_value)
+NameError: name 'max_value' is not defined
+[2024-07-22T17:28:12.465+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=fact_order_product_etl_daily, task_id=transform_and_load_task, execution_date=20240722T172727, start_date=20240722T172736, end_date=20240722T172812
+[2024-07-22T17:28:12.486+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 267 for task transform_and_load_task (name 'max_value' is not defined; 1813)
+[2024-07-22T17:28:12.507+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-22T17:28:12.537+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
