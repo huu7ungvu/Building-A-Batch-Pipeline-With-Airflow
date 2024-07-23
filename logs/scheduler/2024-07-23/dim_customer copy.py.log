@@ -1,7 +1,0 @@
-[2024-07-23T05:35:47.304+0000] {processor.py:161} INFO - Started process (PID=38405) to work on /opt/airflow/dags/dim_customer copy.py
-[2024-07-23T05:35:47.306+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_customer copy.py for tasks to queue
-[2024-07-23T05:35:47.310+0000] {logging_mixin.py:188} INFO - [2024-07-23T05:35:47.309+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_customer copy.py
-[2024-07-23T05:35:47.421+0000] {processor.py:840} INFO - DAG(s) 'dim_customer_etl_daily' retrieved from /opt/airflow/dags/dim_customer copy.py
-[2024-07-23T05:35:47.820+0000] {logging_mixin.py:188} INFO - [2024-07-23T05:35:47.819+0000] {dag.py:3036} INFO - Sync 1 DAGs
-[2024-07-23T05:35:47.918+0000] {logging_mixin.py:188} INFO - [2024-07-23T05:35:47.917+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_customer_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
-[2024-07-23T05:35:48.122+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_customer copy.py took 0.826 seconds
