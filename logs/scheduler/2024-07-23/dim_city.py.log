@@ -10203,3 +10203,38 @@ SyntaxError: invalid syntax
 [2024-07-23T15:38:09.801+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:38:09.801+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-07-23T15:38:09.827+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:38:09.826+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
 [2024-07-23T15:38:09.845+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.115 seconds
+[2024-07-23T15:38:41.058+0000] {processor.py:161} INFO - Started process (PID=11136) to work on /opt/airflow/dags/dim_city.py
+[2024-07-23T15:38:41.061+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_city.py for tasks to queue
+[2024-07-23T15:38:41.063+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:38:41.062+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:38:41.123+0000] {processor.py:840} INFO - DAG(s) 'dim_city_etl_daily' retrieved from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:38:41.180+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:38:41.179+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:38:41.220+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:38:41.220+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:38:41.256+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.208 seconds
+[2024-07-23T15:39:12.791+0000] {processor.py:161} INFO - Started process (PID=11191) to work on /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:12.793+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_city.py for tasks to queue
+[2024-07-23T15:39:12.796+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:12.795+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:13.274+0000] {processor.py:840} INFO - DAG(s) 'dim_city_etl_daily' retrieved from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:13.335+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:13.334+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:39:13.432+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:13.431+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:39:13.641+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.854 seconds
+[2024-07-23T15:39:44.300+0000] {processor.py:161} INFO - Started process (PID=11251) to work on /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:44.301+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_city.py for tasks to queue
+[2024-07-23T15:39:44.302+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:44.302+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:44.383+0000] {processor.py:840} INFO - DAG(s) 'dim_city_etl_daily' retrieved from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:39:44.406+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:44.406+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:39:44.449+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:39:44.448+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:39:44.475+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.179 seconds
+[2024-07-23T15:40:14.785+0000] {processor.py:161} INFO - Started process (PID=11311) to work on /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:14.787+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_city.py for tasks to queue
+[2024-07-23T15:40:14.788+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:14.787+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:14.839+0000] {processor.py:840} INFO - DAG(s) 'dim_city_etl_daily' retrieved from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:14.862+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:14.862+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:40:14.895+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:14.895+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:40:14.920+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.140 seconds
+[2024-07-23T15:40:45.305+0000] {processor.py:161} INFO - Started process (PID=11371) to work on /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:45.307+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_city.py for tasks to queue
+[2024-07-23T15:40:45.308+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:45.307+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:45.349+0000] {processor.py:840} INFO - DAG(s) 'dim_city_etl_daily' retrieved from /opt/airflow/dags/dim_city.py
+[2024-07-23T15:40:45.370+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:45.370+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:40:45.409+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:45.408+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_city_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:40:45.429+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_city.py took 0.127 seconds
