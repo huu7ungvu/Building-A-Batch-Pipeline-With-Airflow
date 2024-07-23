@@ -10301,3 +10301,66 @@ SyntaxError: invalid syntax
 [2024-07-23T15:43:12.557+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:12.556+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-07-23T15:43:12.587+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:12.587+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
 [2024-07-23T15:43:12.611+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.120 seconds
+[2024-07-23T15:43:42.734+0000] {processor.py:161} INFO - Started process (PID=11721) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:43:42.735+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:43:42.737+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:42.736+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:43:42.782+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:43:42.805+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:42.805+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:43:42.832+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:42.832+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:43:42.854+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.124 seconds
+[2024-07-23T15:44:13.083+0000] {processor.py:161} INFO - Started process (PID=11781) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:13.084+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:44:13.086+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:13.085+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:13.124+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:13.145+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:13.145+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:44:13.168+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:13.168+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:44:13.190+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.110 seconds
+[2024-07-23T15:44:43.335+0000] {processor.py:161} INFO - Started process (PID=11841) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:43.336+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:44:43.338+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:43.337+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:43.371+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:44:43.392+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:43.391+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:44:43.416+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:44:43.416+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:44:43.438+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.107 seconds
+[2024-07-23T15:45:13.519+0000] {processor.py:161} INFO - Started process (PID=11901) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:13.521+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:45:13.522+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:13.522+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:13.570+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:13.596+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:13.596+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:45:13.633+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:13.632+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:45:13.660+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.145 seconds
+[2024-07-23T15:45:44.354+0000] {processor.py:161} INFO - Started process (PID=11961) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:44.355+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:45:44.357+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:44.356+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:44.409+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:45:44.455+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:44.455+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:45:44.502+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:45:44.501+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:45:44.534+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.185 seconds
+[2024-07-23T15:46:15.105+0000] {processor.py:161} INFO - Started process (PID=12021) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:15.105+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:46:15.106+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:15.106+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:15.143+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:15.164+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:15.164+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:46:15.187+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:15.187+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:46:15.211+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.109 seconds
+[2024-07-23T15:46:45.735+0000] {processor.py:161} INFO - Started process (PID=12081) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:45.739+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:46:45.740+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:45.739+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:45.798+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:46:45.827+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:45.826+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:46:45.863+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:46:45.862+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:46:45.897+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.170 seconds
+[2024-07-23T15:47:16.028+0000] {processor.py:161} INFO - Started process (PID=12141) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:16.029+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:47:16.031+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:16.030+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:16.081+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:16.100+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:16.100+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:47:16.131+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:16.130+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:47:16.151+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.127 seconds
+[2024-07-23T15:47:46.766+0000] {processor.py:161} INFO - Started process (PID=12201) to work on /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:46.767+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dim_country.py for tasks to queue
+[2024-07-23T15:47:46.768+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:46.767+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:46.799+0000] {processor.py:840} INFO - DAG(s) 'dim_country_etl_daily' retrieved from /opt/airflow/dags/dim_country.py
+[2024-07-23T15:47:46.818+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:46.818+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:47:46.841+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:47:46.841+0000] {dag.py:3823} INFO - Setting next_dagrun for dim_country_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:47:46.861+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dim_country.py took 0.098 seconds
