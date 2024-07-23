@@ -10227,3 +10227,38 @@ SyntaxError: invalid syntax
 [2024-07-23T15:40:43.122+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:43.121+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-07-23T15:40:43.182+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:40:43.181+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
 [2024-07-23T15:40:43.218+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.206 seconds
+[2024-07-23T15:41:13.270+0000] {processor.py:161} INFO - Started process (PID=11428) to work on /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:13.271+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/fact_order.py for tasks to queue
+[2024-07-23T15:41:13.273+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:13.272+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:13.353+0000] {processor.py:840} INFO - DAG(s) 'fact_order_etl_daily' retrieved from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:13.376+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:13.376+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:41:13.405+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:13.405+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:41:13.428+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.161 seconds
+[2024-07-23T15:41:43.560+0000] {processor.py:161} INFO - Started process (PID=11488) to work on /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:43.562+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/fact_order.py for tasks to queue
+[2024-07-23T15:41:43.564+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:43.563+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:43.617+0000] {processor.py:840} INFO - DAG(s) 'fact_order_etl_daily' retrieved from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:41:43.655+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:43.655+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:41:43.713+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:41:43.712+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:41:43.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.202 seconds
+[2024-07-23T15:42:13.852+0000] {processor.py:161} INFO - Started process (PID=11548) to work on /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:13.853+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/fact_order.py for tasks to queue
+[2024-07-23T15:42:13.854+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:13.854+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:13.892+0000] {processor.py:840} INFO - DAG(s) 'fact_order_etl_daily' retrieved from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:13.912+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:13.911+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:42:13.935+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:13.935+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:42:13.957+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.109 seconds
+[2024-07-23T15:42:44.356+0000] {processor.py:161} INFO - Started process (PID=11608) to work on /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:44.357+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/fact_order.py for tasks to queue
+[2024-07-23T15:42:44.359+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:44.358+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:44.410+0000] {processor.py:840} INFO - DAG(s) 'fact_order_etl_daily' retrieved from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:42:44.436+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:44.435+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:42:44.467+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:42:44.466+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:42:44.490+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.138 seconds
+[2024-07-23T15:43:15.087+0000] {processor.py:161} INFO - Started process (PID=11668) to work on /opt/airflow/dags/fact_order.py
+[2024-07-23T15:43:15.088+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/fact_order.py for tasks to queue
+[2024-07-23T15:43:15.095+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:15.094+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:43:15.156+0000] {processor.py:840} INFO - DAG(s) 'fact_order_etl_daily' retrieved from /opt/airflow/dags/fact_order.py
+[2024-07-23T15:43:15.200+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:15.199+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-07-23T15:43:15.257+0000] {logging_mixin.py:188} INFO - [2024-07-23T15:43:15.257+0000] {dag.py:3823} INFO - Setting next_dagrun for fact_order_etl_daily to 2024-07-23 00:00:00+00:00, run_after=2024-07-24 00:00:00+00:00
+[2024-07-23T15:43:15.302+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/fact_order.py took 0.220 seconds
