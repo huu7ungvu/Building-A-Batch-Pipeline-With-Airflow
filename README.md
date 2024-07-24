@@ -13,7 +13,7 @@ The components used in our project include Python for data generation, PostgreSQ
 With this comprehensive setup, we demonstrate the end-to-end process of migrating an existing database to the cloud, automating data generation, processing, and analysis. Through the integration of these powerful components, we enable efficient data handling and derive meaningful insights from the migrated database.
 
 Below a simple illustration of the overall process of this project :
-![System Architecture](readme_imgs/system_design.png)
+![System Architecture](readme_imgs/system_design_2.png)
 
 # Folder Structure
 * airflow: Contain all script to build airflow pipeline and setup airflow docker system.
