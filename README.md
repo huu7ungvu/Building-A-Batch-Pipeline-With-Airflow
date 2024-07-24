@@ -32,22 +32,37 @@ Below a simple illustration of the overall process of this project :
 
 # Guide 
 ## Setup Google Cloud SQL
+### Setup Environment
 Access Google SQL on GCP and create a instance. You can choose any your database engine. In this project, I choose PostgreSQL.
 ![alt text](readme_imgs/image.png)
 
 After instance set up successfully, We access the instance and create a new database. Example, I created **pd-database** instance and create **db_app** database.
 ![alt text](readme_imgs/image_2.png)
 
-To create tables, we should make a new admin user instead default. Then, we access google sql studio, log in with the new admin user that created above. Copy script google_sql/init_schema_db_script.sql to google cloud studio and run to create table.
+To create tables, we should make a new admin user instead default. Then, we access google sql studio, log in with the new admin user that created above. Copy script **google_sql/init_schema_db_script.sql** to google cloud studio and run to create table.
 
 * Create user
 ![alt text](readme_imgs/image_3.png)
 * Run script
 ![alt text](readme_imgs/image_4.png)
 
-Import data
+After run script, 6 tables will be created: city_data_.csv; country_data.csv; product_data.csv; customer_data.csv; order_data.csv; order_product_data.csv
+
+### Import data to tables
+Setup a Bucket in Google Cloud Storage to upload files in **/dataset** folder. In this project, I created **dataset-db-1** bucket.
+![alt text](readme_imgs/image_7.png)
+In Overview section on Cloud SQL, we select import.
+![alt text](readme_imgs/image_8.png) 
+In import data configuration, we choose csv file in **dataset-db-1** bucket, enter appropriate table name and database name.
+![alt text](readme_imgs/image_9.png)
+
+Table mapping between csv and table name database.
+![alt text](readme_imgs/image_10.png) 
 
 ## Data Generation
+We schedule **data_generation_simulator/simulator_generator_data** using Windows Task Scheduler to automatically run script. Task scheduler will automatically call and execute the script to create new data for 2 tables: order_stg and order_product_stg
+
+Instruction: [Schedule a Python script by Window Task Scheduler](https://community.esri.com/t5/python-documents/schedule-a-python-script-using-windows-task/ta-p/915861)
 
 ## Configuration Airflow pipeline
 ### Set up Airflow environment
