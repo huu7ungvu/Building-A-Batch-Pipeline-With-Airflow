@@ -46,7 +46,7 @@ To create tables, we should make a new admin user instead default. Then, we acce
 * Run script
 ![alt text](readme_imgs/image_4.png)
 
-After run script, 6 tables will be created: city_data_.csv; country_data.csv; product_data.csv; customer_data.csv; order_data.csv; order_product_data.csv
+After run script, 6 tables will be created: city_location_stg; country_location_stg; customer_stg; order_stg; order_product_stg;product_stg
 
 ### Import data to tables
 Setup a Bucket in Google Cloud Storage to upload files in **/dataset** folder. In this project, I created **dataset-db-1** bucket.
