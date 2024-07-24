@@ -13,11 +13,76 @@ The components used in our project include Python for data generation, PostgreSQ
 With this comprehensive setup, we demonstrate the end-to-end process of migrating an existing database to the cloud, automating data generation, processing, and analysis. Through the integration of these powerful components, we enable efficient data handling and derive meaningful insights from the migrated database.
 
 Below a simple illustration of the overall process of this project :
-![System Architecture](system_design.png)
+![System Architecture](readme_imgs/system_design.png)
 
 # Folder Structure
 * airflow: Contain all script to build airflow pipeline and setup airflow docker system.
 * data_generation_simulator: Contain all script and requirement to run automate data generation process for order data.
+* dataset: Contain dataset file to import database and for automation order data generation
 * google_sql: Contain script to create tables in Google SQL PostgreDB.
 
-# Setup and configuration 
+# Setup and configuration
+1) Google Cloud Platform (GCP) Account: Create a GCP account and set up a project to access the required services get the json file (airflow/key_admin_service_account_connection.json) for the service account as well since it will allow the authentifications. Enable Google Cloud Service APIs, Google Cloud Storage APIs, Google Cloud Dataflow APIs and Google Cloud Bigquery APIs to build pipeline in project. 
+2) Python: Install Python on your local machine, preferably the latest version, along with the necessary packages in requirements.txt.
+3) PostgreSQL: Set up a PostgreSQL instance on Google Cloud SQL.
+4) Google Cloud Storage (GCS): Set up a GCS bucket to store intermediate data during the pipeline execution. Ensure you have the necessary permissions and access credentials.
+5) Google BigQuery: Create a BigQuery dataset and tables to store the processed data. Configure the necessary permissions and ensure you have the credentials to interact with BigQuery.
+6) Airflow: Set up Apache Airflow on Docker to automate the data generation, processing, and loading pipeline. Install and configure Airflow according to your requirements, including defining the necessary DAGs and scheduling tasks, in this project we used airflow on a docker container.
+7) Google Cloud SDK: Configured with appropriate permissions
+
+# Guide 
+## Setup Google Cloud SQL
+Access Google SQL on GCP and create a instance. You can choose any your database engine. In this project, I choose PostgreSQL.
+![alt text](readme_imgs/image.png)
+
+After instance set up successfully, We access the instance and create a new database. Example, I created **pd-database** instance and create **db_app** database.
+![alt text](readme_imgs/image_2.png)
+
+To create tables, we should make a new admin user instead default. Then, we access google sql studio, log in with the new admin user that created above. Copy script google_sql/init_schema_db_script.sql to google cloud studio and run to create table.
+
+* Create user
+![alt text](readme_imgs/image_3.png)
+* Run script
+![alt text](readme_imgs/image_4.png)
+
+Import data
+
+## Data Generation
+
+## Configuration Airflow pipeline
+### Set up Airflow environment
+#### Install Airflow by compose
+Modify docker-compose.yaml. In line 52, we change to :
+image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.8.1}.
+
+Run bash command to pulling airflow image and some related images.
+``` bash
+docker-compose up airflow-init
+```
+
+#### Extend Airflow with python packages:
+
+Run bash command to extend airflow image with dependencies which used to build pipeline.
+```bash
+# Extend the Docker image
+docker build . --tag extending_airflow
+```
+
+#### Run Airflow system
+Modify docker-compose.yaml. In line 52, we change to :
+image: ${AIRFLOW_IMAGE_NAME:-extending_airflow:latest}
+
+Run bash command to start airflow system.
+
+``` bash
+docker-compose up
+```
+
+#### Make connection Airflow docker to GCP
+Access http://localhost:8080/connection/list/. 
+Add new connection with this configuration:
+![alt text](readme_imgs/image_5.png)
+
+## Run pipeline
+Access http://localhost:8080/home?tags=prj. This is list pipelines that I created in airflow/dags folder. I can run manually or read more details of specific pipeline.
+![alt text](readme_imgs/image_6.png) 
