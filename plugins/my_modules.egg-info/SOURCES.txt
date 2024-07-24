@@ -1,9 +1,0 @@
-setup.py
-my_modules/__init__.py
-my_modules/ingestion_stage.py
-my_modules/transformation_load_stage.py
-my_modules.egg-info/PKG-INFO
-my_modules.egg-info/SOURCES.txt
-my_modules.egg-info/dependency_links.txt
-my_modules.egg-info/not-zip-safe
-my_modules.egg-info/top_level.txt
