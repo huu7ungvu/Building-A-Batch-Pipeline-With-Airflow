@@ -24,7 +24,7 @@ dw_table_name = 'dim_city'
     tags=["prj"]
 )
 
-def elt_dim_product():
+def elt_dim_city():
     @task  
     def ingest_data_task():
         ingest_data(db_table_name)
@@ -97,4 +97,4 @@ def elt_dim_product():
     ingest_data_task() >> transform_and_load_task() 
 
 # create dag
-dag = elt_dim_product()
+dag = elt_dim_city()

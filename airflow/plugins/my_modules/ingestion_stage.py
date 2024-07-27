@@ -55,19 +55,19 @@ def get_con():
 
     return conn
 
-def get_last_updated_ts(table_name):
+def get_last_updated_ts(table_name, config):
     try:
         storage_client = storage.Client()
-        bucket = storage_client.bucket('ingestion_layer')
+        bucket = storage_client.bucket(config['gcs_bucket_name'])
         blob = bucket.blob('log/{0}_log-00000-of-00001.txt'.format(table_name))
         last_updated_at = blob.download_as_text()
         return last_updated_at
     except:
         return None
 
-def capture_data_change(pool,table_name):
+def capture_data_change(pool,table_name,config):
     # get last_updated_ts of product table
-    last_updated_at = get_last_updated_ts(table_name)
+    last_updated_at = get_last_updated_ts(table_name,config)
 
     # capture data
     capture_data_change_df = pd.read_sql_query(
@@ -109,9 +109,9 @@ def capture_data_change(pool,table_name):
         fastavro.writer(file,schema,records)
     print("Created avro file successfully")
 
-def push_gcs(table_name) :
+def push_gcs(table_name,config):
     storage_client = storage.Client()
-    bucket = storage_client.bucket('ingestion_layer')
+    bucket = storage_client.bucket(config['gcs_bucket_name'])
     filepath = "push_cdc/{0}_capture_change_data.avro".format(table_name)
     filename = "{0}_capture_change_data.avro".format(table_name)
     blob = bucket.blob(filepath)
@@ -125,14 +125,15 @@ def push_gcs(table_name) :
 
 def ingest_data(table_name):
     print("Start data ingestion stage")
+    instance, config = load_config()
     # create pool engine
     pool = sqlalchemy.create_engine(
         "postgresql+pg8000://",
         creator=get_con, # Requirement: this func does not have params 
     )
     # cdc data 
-    capture_data_change(pool,table_name)
+    capture_data_change(pool,table_name,config)
     # push data to GCS
-    # push_gcs(table_name)
+    push_gcs(table_name,config)
 
     print("Ingest data successfully")

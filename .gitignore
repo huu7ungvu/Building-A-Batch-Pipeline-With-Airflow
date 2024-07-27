@@ -6,3 +6,4 @@ airflow/key_admin_service_account.json
 data_generation_simulator/database.ini
 *.pyc
 **/__pycache__/
+airflow/config/dags/gcp_config.ini
