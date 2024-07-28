@@ -1,14 +1,14 @@
 import datetime
 import pendulum
-import os
 from pathlib import Path
+from configparser import ConfigParser
 
-import airflow
 from airflow.decorators import dag, task
 from apache_beam.options.pipeline_options import PipelineOptions, GoogleCloudOptions, StandardOptions
 import apache_beam as beam 
 
 from my_modules.ingestion_stage import ingest_data
+from my_modules.config import load_config
 import my_modules.transformation_load_stage as mo
 
 # global var
@@ -32,34 +32,35 @@ def elt_dim_city():
     @task
     def transform_and_load_task():
         print("Start data transformation and load stage")
-        # config set up file
+
+        # config
         base_dir = Path(__file__).resolve().parent.parent
         filepath = base_dir /'plugins' / 'setup.py' # not return a string
+        config = load_config()
 
-        # init some var for creation beam pipeline
-        avro_path_file_gcs = "gs://ingestion_layer/push_cdc/{0}_capture_change_data.avro".format(db_table_name)
-        table_path_bigquery = "liquid-kite-423215-s2.dw_demo.{0}".format(dw_table_name)
+        # init some vars for creation beam pipeline
+        avro_path_file_gcs = "gs://{0}/push_cdc/{1}_capture_change_data.avro".format(config['gcs_bucket_name'],db_table_name)
+        table_path_bigquery = "{0}.{1}.{2}".format(config['project_id'],config['dw_name'],dw_table_name)
         schema_table_bigquery = 'ingested_at:TIMESTAMP\
             ,created_at:TIMESTAMP\
             ,last_updated_at:TIMESTAMP\
             ,city_id:INTEGER\
             ,city_name:STRING\
             ,country_id:INTEGER\
-            '
+        '
         dedup_unique_key = 'city_id'  
 
         # config beam pipeline
         options = PipelineOptions(save_main_sesion = True, setup_file = str(Path(filepath)), pickle_library = 'cloudpickle')
+        options.view_as(StandardOptions).runner = 'DataflowRunner'
         gcp_options = options.view_as(GoogleCloudOptions)
         gcp_options.dataflow_endpoint = 'https://dataflow.googleapis.com'
-        gcp_options.project = 'liquid-kite-423215-s2'
+        gcp_options.project = config['project_id']
         gcp_options.job_name = "{0}-bigquery-etl".format(dw_table_name.replace("_","-"))
-        gcp_options.service_account_email = 'dataflow@liquid-kite-423215-s2.iam.gserviceaccount.com'
-        gcp_options.region = 'asia-southeast2'
-        gcp_options.staging_location = 'gs://ingestion_layer/staging'
-        gcp_options.temp_location = 'gs://ingestion_layer/tmp'
-
-        options.view_as(StandardOptions).runner = 'DataflowRunner'
+        gcp_options.service_account_email = config['service_account_email']
+        gcp_options.region = config['region_2']
+        gcp_options.staging_location = 'gs://{0}/staging'.format(config['gcs_bucket_name'])
+        gcp_options.temp_location = 'gs://{0}/tmp'.format(config['gcs_bucket_name'])
         
         # transform data
         with beam.Pipeline(options=options) as p:

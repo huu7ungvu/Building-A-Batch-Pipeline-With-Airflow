@@ -1,9 +1,8 @@
 airflow/logs/
 airflow/config/
 airflow/plugins/my_modules.egg-info
-airflow/plugins/my_modules/database.ini
+airflow/plugins/my_modules/gcp_config.ini
 airflow/key_admin_service_account.json
 data_generation_simulator/database.ini
 *.pyc
 **/__pycache__/
-airflow/config/dags/gcp_config.ini

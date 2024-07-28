@@ -7,29 +7,29 @@ from datetime import datetime,timezone
 import fastavro
 from pathlib import Path
 from json import load as jsload
+from config import load_config
 
 base_dir = Path(__file__).resolve().parent.parent
-ini_filepath = base_dir / 'my_modules'/ 'database.ini'
 avro_filepath = base_dir / 'my_modules'/ 'table_schema_avro.json'
 
-def load_config(filename=ini_filepath, section='GSQL'):
-    # print(os.path.abspath(__file__))
-    parser = ConfigParser()
-    parser.read(filename)
+# def load_config(filename=ini_filepath, section='GSQL'):
+#     # print(os.path.abspath(__file__))
+#     parser = ConfigParser()
+#     parser.read(filename)
 
-    # get section, default to postgresql
-    config = {}
-    if parser.has_section(section):
-        params = parser.items(section)
-        for param in params:
-            config[param[0]] = param[1]
-    else:
-        raise Exception('Section {0} not found in the {1} file'.format(section, filename))
+#     # get section, default to postgresql
+#     config = {}
+#     if parser.has_section(section):
+#         params = parser.items(section)
+#         for param in params:
+#             config[param[0]] = param[1]
+#     else:
+#         raise Exception('Section {0} not found in the {1} file'.format(section, filename))
 
-    # return config
-    # init parameters
-    instance_connection_name = f"{config['project_id']}:{config['region']}:{config['instance_name']}"
-    return instance_connection_name, config
+#     # return config
+#     # init parameters
+#     instance_connection_name = f"{config['project_id']}:{config['region']}:{config['instance_name']}"
+#     return instance_connection_name, config
 
 def get_schema_avro_file(table_name):
     with open (avro_filepath,'r') as file:
@@ -40,7 +40,8 @@ def get_schema_avro_file(table_name):
 
 def get_con():
     connector = Connector()
-    instance, config = load_config()
+    config = load_config()
+    instance = f"{config['project_id']}:{config['region_1']}:{config['instance_name']}"
     db_user,db_pass,db_name = config['db_user'], config['db_pass'], config['db_name']
 
     # set connection params
@@ -125,7 +126,7 @@ def push_gcs(table_name,config):
 
 def ingest_data(table_name):
     print("Start data ingestion stage")
-    instance, config = load_config()
+    config = load_config()
     # create pool engine
     pool = sqlalchemy.create_engine(
         "postgresql+pg8000://",
