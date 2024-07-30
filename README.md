@@ -22,7 +22,7 @@ Below a simple illustration of the overall process of this project :
 * google_sql: Contain script to create tables in Google SQL PostgreDB.
 
 # Setup and configuration
-1) Google Cloud Platform (GCP) Account: Create a GCP account and set up a project to access the required services get the json file (airflow/key_admin_service_account_connection.json) for the service account as well since it will allow the authentifications. Enable Google Cloud Service APIs, Google Cloud Storage APIs, Google Cloud Dataflow APIs and Google Cloud Bigquery APIs to build pipeline in project. 
+1) Google Cloud Platform (GCP) Account: Create a GCP account and set up a project to access the required services. After get the json file (**airflow/key_admin_service_account_connection.json**) for the service account as well since it will allow the authentifications. Enable Google Cloud Service APIs, Google Cloud Storage APIs, Google Cloud Dataflow APIs and Google Cloud Bigquery APIs to build pipeline in project. 
 2) Python: Install Python on your local machine, preferably the latest version, along with the necessary packages in requirements.txt.
 3) PostgreSQL: Set up a PostgreSQL instance on Google Cloud SQL.
 4) Google Cloud Storage (GCS): Set up a GCS bucket to store intermediate data during the pipeline execution. Ensure you have the necessary permissions and access credentials.
@@ -65,6 +65,21 @@ We schedule **data_generation_simulator/simulator_generator_data** using Windows
 Instruction: [Schedule a Python script by Window Task Scheduler](https://community.esri.com/t5/python-documents/schedule-a-python-script-using-windows-task/ta-p/915861)
 
 ## Configuration Airflow pipeline
+### Set up configuration file
+We need to fill some values into **airflow/plugins/my_modules/gcp_config_github.ini** to config GCP environment for Airflow pipeline.
+
+Details:
+- project_id: GCP Project ID.
+- region_2: Region that run dataflow pipeline.
+- gcs_bucket_name: Bucket name that will storage all file and folder of this airflow pipeline when pipeline run.
+- dw_name: Data warehouse name in BigQuery.
+- service_account_email: Service account email used to run dataflow pipeline.
+- db_user: User of Google SQL Database that you created above. 
+- db_pass: Password of user Google SQL Database.
+- db_name: Database name that you created above.
+- region_1: Region of Google SQL Database locate.
+- instance_name: Instance name of Google SQL that you created above.
+
 ### Set up Airflow environment
 #### Install Airflow by compose
 Modify docker-compose.yaml. In line 52, we change to :
@@ -101,3 +116,20 @@ Add new connection with this configuration:
 ## Run pipeline
 Access http://localhost:8080/home?tags=prj. This is list pipelines that I created in airflow/dags folder. I can run manually or read more details of specific pipeline.
 ![alt text](readme_imgs/image_6.png) 
+
+----------
+# Credits
+
+## Acknowledgments
+
+## Special Thanks
+
+# Contacts
+If you have any questions, suggestions, or would like to collaborate, feel free to contact me:
+
+- **Email**: [vutungprime01@gmail.com](mailto:vutungprime01@gmail.com)
+- **LinkedIn**: [huu7ungvu](https://www.linkedin.com/in/huu7ungvuofficial/)
+- **Twitter**: [huu7ungvu](https://twitter.com/huu7ungvu)
+- **GitHub**: [huu7ungvu](https://github.com/huu7ungvu)
+
+Feel free to open an issue if you find any bugs or have feature requests. I appreciate any feedback or contributions to the project!
